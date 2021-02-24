@@ -1,0 +1,13 @@
+header {
+    background-color: #302f2f;
+    color: white;
+}
+
+.logIn {
+    text-transform: uppercase;
+    color: #41B3A3;
+}
+
+.tabs {
+    color: lightgray;
+}
