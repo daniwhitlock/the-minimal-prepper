@@ -1,0 +1,72 @@
+:root {
+    --green-color: #6c9f7f;
+    --blue-color: #2C518F;
+}
+
+.profileBar, .homepageBar {
+    background-color: var(--green-color);
+    
+}
+
+.profileMargin {
+    padding: 10px;
+}
+
+.imgPadding {
+    margin: 20px;
+    padding: 0px;
+}
+
+.blogPostBox {
+    background-color: var(--blue-color);
+    margin: 5px;
+}
+
+.funnyTipsBox {
+    background-color: var(--blue-color);   
+    text-align: center;
+    margin: 5px;
+
+    /* for layout only */
+    height: 200px;
+}
+
+.blogPostAlign{
+    text-align: center;
+    font-size: 25px;
+}
+
+.pantryBox{
+    width: 200px;
+    margin: 5px 0px;
+}
+
+.blogPostSubmit {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    margin: 5px;
+    display: flex;
+    
+}
+
+
+
+.main-section {
+    background-color: var(--blue-color)
+}
+
+.hero-section {
+    background-color: var(--green-color);
+}
+
+#logo2 {
+    height: 100px;
+}
+
+.custom-element {
+    color: color-yiq(#000); 
+  }
