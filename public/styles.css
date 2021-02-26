@@ -5,7 +5,7 @@
 
 .profileBar, .homepageBar {
     background-color: var(--green-color);
-    margin: 10px;
+    
 }
 
 .profileMargin {
@@ -20,11 +20,6 @@
 .blogPostBox {
     background-color: var(--blue-color);
     margin: 5px;
-}
-
-img {
-    height: 200px;
-    width: 200px;
 }
 
 .funnyTipsBox {
@@ -57,3 +52,21 @@ img {
     display: flex;
     
 }
+
+
+
+.main-section {
+    background-color: var(--blue-color)
+}
+
+.hero-section {
+    background-color: var(--green-color);
+}
+
+#logo2 {
+    height: 100px;
+}
+
+.custom-element {
+    color: color-yiq(#000); 
+  }
