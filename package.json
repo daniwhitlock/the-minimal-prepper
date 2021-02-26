@@ -1,11 +1,11 @@
 {
-  "name": "project-2",
+  "name": "the-minimal-prepper",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,11 @@
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
     "express-session": "^1.17.1",
-    "handlebars": "^4.7.7",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "path": "^0.12.7",
     "sequelize": "^6.5.0"
   }
 }
