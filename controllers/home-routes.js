@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 router.get('/', (req, res) => {
     console.log(req.session);
-  
+    res.render('profile', {req})
     // Post.findAll({
     //   attributes: [
     //     'id',
