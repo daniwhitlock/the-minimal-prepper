@@ -3,19 +3,14 @@
     --blue-color: #2C518F;
 }
 
-
-
 .profileBar, .homepageBar {
     background-color: var(--green-color);
     margin: 10px;
-    
 }
 
 .profileMargin {
     padding: 10px;
 }
-
-
 
 .imgPadding {
     margin: 20px;
@@ -52,8 +47,13 @@ img {
 }
 
 .blogPostSubmit {
-    background-color: rgb(130, 245, 253);
     margin: 5px;
     display: flex;
     justify-content: flex-end;
+}
+
+.nav-item {
+    margin: 5px;
+    display: flex;
+    
 }
