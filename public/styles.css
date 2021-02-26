@@ -1,12 +1,15 @@
+:root {
+    --green-color: #6c9f7f;
+    --blue-color: #2C518F;
+}
 
-
-.profileBar {
-    background-color: rgb(130, 245, 253);
-    margin: 20px;
+.profileBar, .homepageBar {
+    background-color: var(--green-color);
+    margin: 10px;
 }
 
 .profileMargin {
-    padding: 20px;
+    padding: 10px;
 }
 
 .imgPadding {
@@ -15,7 +18,7 @@
 }
 
 .blogPostBox {
-    background-color: rgb(130, 245, 253);
+    background-color: var(--blue-color);
     margin: 5px;
 }
 
@@ -25,7 +28,7 @@ img {
 }
 
 .funnyTipsBox {
-    background-color: rgb(130, 245, 253);   
+    background-color: var(--blue-color);   
     text-align: center;
     margin: 5px;
 
@@ -44,8 +47,13 @@ img {
 }
 
 .blogPostSubmit {
-    background-color: rgb(130, 245, 253);
     margin: 5px;
     display: flex;
     justify-content: flex-end;
+}
+
+.nav-item {
+    margin: 5px;
+    display: flex;
+    
 }
