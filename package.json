@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/daniwhitlock/the-minimal-prepper#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "bootstrap-icons": "^1.4.0",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",

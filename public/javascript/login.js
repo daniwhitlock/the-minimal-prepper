@@ -11,7 +11,7 @@ async function userCreate(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-data').value.trim();
     const password = document.querySelector('#password-data').value.trim();
-    const underSeven = document.querySelector('#underSeven-data').value.trim();
+    const underseven = document.querySelector('#underSeven-data').value.trim();
     const overSeven = document.querySelector('#overSeven-data').value.trim();
     const weeksPrep = document.querySelector('#weeksPrep-data').value.trim();
     const diet = document.querySelector('#diet-data').value.trim();
@@ -19,7 +19,7 @@ async function userCreate(event) {
     console.log(username)
     console.log(email)
     console.log(password)
-    console.log(underSeven)
+    console.log(underseven)
     console.log(overSeven)
     console.log(weeksPrep)
     console.log(diet)
@@ -29,9 +29,15 @@ async function userCreate(event) {
         const response = await fetch('/api/users', {
           method: 'post',
           body: JSON.stringify({
-            username
+            username,
+            email,
+            password,
+            underseven,
+            overSeven,
+            weeksPrep,
+            diet
           }),
-        //   headers: { 'Content-Type': 'application/json' }
+          headers: { 'Content-Type': 'application/json' }
         });
         console.log(username)
         // check the response status
