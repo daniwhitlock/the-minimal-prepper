@@ -50,10 +50,10 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        diet: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // diet: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
 
     },
     {

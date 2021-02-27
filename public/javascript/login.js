@@ -14,7 +14,7 @@ async function userCreate(event) {
     const underseven = document.querySelector('#underSeven-data').value.trim();
     const overSeven = document.querySelector('#overSeven-data').value.trim();
     const weeksPrep = document.querySelector('#weeksPrep-data').value.trim();
-    const diet = document.querySelector('#diet-data').value.trim();
+    // const diet = document.querySelector('#diet-data').value.trim();
     console.log('pass')
     console.log(username)
     console.log(email)
@@ -22,7 +22,7 @@ async function userCreate(event) {
     console.log(underseven)
     console.log(overSeven)
     console.log(weeksPrep)
-    console.log(diet)
+    // console.log(diet)
     if (username) {
 
         console.log(username)
@@ -35,7 +35,7 @@ async function userCreate(event) {
             underseven,
             overSeven,
             weeksPrep,
-            diet
+            // diet
           }),
           headers: { 'Content-Type': 'application/json' }
         });

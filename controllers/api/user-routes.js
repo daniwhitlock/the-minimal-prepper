@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     console.log(req.body.underseven)
     console.log(req.body.overSeven)
     console.log(req.body.weeksPrep)
-    console.log(req.body.diet)
+    // console.log(req.body.diet)
   
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
@@ -22,7 +22,7 @@ router.post('/', (req, res) => {
       underseven: req.body.underseven,
       overSeven: req.body.overSeven,
       weeksPrep: req.body.weeksPrep,
-      diet: req.body.diet
+      // diet: req.body.diet
 
     })
     .then(dbUserData => {

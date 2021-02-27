@@ -1,11 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 :root {
     --green-color: #6c9f7f;
     --blue-color: #2C518F;
 }
 
-.profileBar, .homepageBar {
+
+
+.profileBar, .homepageBar  {
     background-color: var(--green-color);
-    
 }
 
 .profileMargin {
@@ -54,13 +61,38 @@
 }
 
 
+.signup-card {
+    margin:auto;
+    margin-top: 65px;
 
-.main-section {
-    background-color: var(--blue-color)
 }
 
 .hero-section {
-    background-color: var(--green-color);
+    background-image: linear-gradient(#6c9f7f 10%,#2C518F);
+}
+
+.main-section {
+    background-color: var(--blue-color);
+    
+    
+}
+
+.blog-section {
+    margin-top: 65px;
+   
+}
+
+.tips-section {
+    margin-top: 65px;
+    
+}
+
+#title1 {
+    height: 100px;
+}
+
+#title2 {
+    height: 100px;
 }
 
 #logo2 {
@@ -89,3 +121,4 @@
       text-align: left;
       color: white;
   }
+
