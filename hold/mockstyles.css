@@ -1,7 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 :root {
     --green-color: #6c9f7f;
     --blue-color: #2C518F;
 }
+
+
 
 .profileBar, .homepageBar  {
     background-color: var(--green-color);
@@ -53,8 +61,10 @@
 }
 
 
-#signup-card {
-    background-color: white;
+.signup-card {
+    margin:auto;
+    margin-top: 65px;
+
 }
 
 .hero-section {
@@ -63,6 +73,26 @@
 
 .main-section {
     background-color: var(--blue-color);
+    
+    
+}
+
+.blog-section {
+    margin-top: 65px;
+   
+}
+
+.tips-section {
+    margin-top: 65px;
+    
+}
+
+#title1 {
+    height: 100px;
+}
+
+#title2 {
+    height: 100px;
 }
 
 #logo2 {
