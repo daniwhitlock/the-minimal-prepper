@@ -43,61 +43,93 @@
 
             <img src="../images/Futurama-on-Syfy-700x300.jpg" />
 
-            <div class="blogPostBox pantryBox">
+            <div class="blogPostBox pantryBoxc center">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
                     Pantry Generator
                 </button>
                 {{> pantrygenerator}}
 
-                <div>
-                    Goal: {{!-- The Length needs to be the number that the partials pantry generator
+                <div class="goal">
+                    Goal: <span id="timeGoal"></span>{{!-- The Length needs to be the number that the partials pantry
+                    generator
                     selected--}}
                 </div>
-                <table style="width:100%">
+                <table style="width:100%" class="left-white">
                     <tr>
 
-                        <th>Item</th>
+                        <th>Item </th>
                         <th>Amount</th>
                         <th>Status</th>
                     </tr>
                     <tr>
-                        <td>Grains</td>
+                        <td>Grains (lbs)</td>
                         {{!-- dependent on the # of people and length of time --}}
-                        <td id="grainAmount"></td>
+                        <td id="grainsAmount"></td>
                         <td>
                             <label class="custom-control-label" for="checkGrains"></label>
                             <input type="checkbox" class="custom-control-input" id="checkGrains">
                         </td>
                     </tr>
                     <tr>
-                        <td>3 Months</td>
+                        <td>Legumes/Beans (lbs)</td>
+                        <td id="legumesAmount"></td>
                         <td>
-                            <label class="custom-control-label" for="customCheck3"></label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label" for="checkLegumes"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkLegumes">
                         </td>
                     </tr>
                     <tr>
-                        <td>6 Months</td>
+                        <td>Milk (lbs)</td>
+                        <td id="milkAmount"></td>
                         <td>
-                            <label class="custom-control-label" for="customCheck6"></label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck6">
+                            <label class="custom-control-label" for="checkMilk"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkMilk">
                         </td>
                     </tr>
                     <tr>
-                        <td>9 Months</td>
+                        <td>Sugars (lbs)</td>
+                        <td id="sugarAmount"></td>
                         <td>
-                            <label class="custom-control-label" for="customCheck9"></label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck9">
+                            <label class="custom-control-label" for="checkSugar"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkSugar">
                         </td>
                     </tr>
                     <tr>
-                        <td>12 Months</td>
+                        <td>Fats/Oils (lbs)</td>
+                        <td id="fatsAmount"></td>
                         <td>
-                            <label class="custom-control-label" for="customCheck12"></label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck12">
+                            <label class="custom-control-label" for="checkFats"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkFats">
                         </td>
                     </tr>
+                    <tr>
+                        <td>Fruits/Veggies (lbs)</td>
+                        <td id="fruitsVeggiesAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkFruitsVeggies"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Salt (lbs)</td>
+                        <td id="saltAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkSalt"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkSalt">
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>Water (gal)</td>
+                        <td id="waterAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkWater"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkWater">
+                        </td>
+                    </tr>
+
                 </table>
+
+                
 
             </div>
 

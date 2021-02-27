@@ -70,3 +70,22 @@
 .custom-element {
     color: color-yiq(#000); 
   }
+
+  .white-letters {
+      color: white;
+  }
+
+  .goal {
+      color: white;
+      background: #6c9f7f;
+      font-weight: bold;
+  }
+
+  .center {
+      text-align: center;
+  }
+
+  .left-white {
+      text-align: left;
+      color: white;
+  }
