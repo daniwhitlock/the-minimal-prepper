@@ -23,6 +23,25 @@ async function userCreate(event) {
     console.log(overSeven)
     console.log(weeksPrep)
     console.log(diet)
+    if (username) {
+
+        console.log(username)
+        const response = await fetch('/api/users', {
+          method: 'post',
+          body: JSON.stringify({
+            username
+          }),
+        //   headers: { 'Content-Type': 'application/json' }
+        });
+        console.log(username)
+        // check the response status
+        if (response.ok) {
+          console.log('success');
+        } else {
+            console.log('dang')
+          alert(response.statusText);
+        }
+      }
     // event.preventDefault();
   
     // const email = document.querySelector('#email-login').value.trim();
@@ -46,6 +65,8 @@ async function userCreate(event) {
     // }
 }
 // console.log(document.querySelector('.user-form'))
+
+//working on homepage handlebars in form.
 document.querySelector('.user-form').addEventListener('submit', userCreate);
 
 // $(".user-form").on('submit', userCreate)
