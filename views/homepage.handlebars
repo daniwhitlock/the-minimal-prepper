@@ -59,6 +59,7 @@
   
                     <!-- Modal -->
 
+                    <form class="user-form">
                     {{!-- attempting to get modal data using event listener --}}
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -71,64 +72,64 @@
                         <div class="modal-body">
                             
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput">
-                                <label for="floatingInput">Enter a username</label>
+                                <input type="email" class="form-control" id="username-signup">
+                                <label for="username-signup">Enter a username</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"  placeholder="name@example.com">
-                                <label for="floatingPassword">Email</label>
+                                <input type="password" class="form-control" id="email-data"  placeholder="name@example.com">
+                                <label for="email-data">Email</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
+                                <input type="password" class="form-control" id="password-data" placeholder="Password">
+                                <label for="password-data">Password</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                  <option selected>None</option>
+                                <select class="form-select" id="underSeven-data" aria-label="Floating label select example">
+                                  <option value="0">None</option>
                                   <option value="1">One</option>
                                   <option value="2">Two</option>
                                   <option value="3">Three</option>
                                   <option value="4">Four</option>
                                 </select>
-                                <label for="floatingSelect">Select the number of those who under the age of 7.<label>
+                                <label for="underSeven-data">Select the number of those who under the age of 7.<label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                  <option selected>One</option>
+                                <select class="form-select" id="overSeven-data" aria-label="Floating label select example">
+                                  <option value="1">One</option>
                                   <option value="2">Two</option>
                                   <option value="3">Three</option>
                                   <option value="4">Four</option>
-                                  <option value="1">Five</option>
-                                  <option value="1">Six</option>
-                                  <option value="1">Seven</option>
+                                  <option value="5">Five</option>
+                                  <option value="6">Six</option>
+                                  <option value="7">Seven</option>
                                 </select>
-                                <label for="floatingSelect">Select the number of those who are older than the age of 7.</label>
+                                <label for="overSeven-data">Select the number of those who are older than the age of 7.</label>
                             </div>
                            
                             <!--time-->
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                  <option selected>2 weeks</option>
-                                  <option value="1">1 month</option>
-                                  <option value="2">3 months</option>
-                                  <option value="3">6 months</option>
-                                  <option value="1">9 months</option>
+                                <select class="form-select" id="weeksPrep-data" aria-label="Floating label select example">
+                                  <option vale="2weeks">2 weeks</option>
+                                  <option value="1month">1 month</option>
+                                  <option value="3months">3 months</option>
+                                  <option value="6months">6 months</option>
+                                  <option value="9months">9 months</option>
                                 </select>
-                                <label for="floatingSelect">How much time are you wanting to prepare for?</label>
+                                <label for="weeksPrep-data">How much time are you wanting to prepare for?</label>
                             </div>
 
                             <!--Dietary options-->
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                  <option selected>None</option>
+                                <select class="form-select" id="diet-data" aria-label="Floating label select example">
+                                  <option value="0">None</option>
                                   <option value="1">One</option>
                                   <option value="2">Two</option>
                                   <option value="3">Three</option>
                                   <option value="4">Four</option>
                                 </select>
-                                <label for="floatingSelect">Select Any Dietary Restricitons</label>
+                                <label for="diet-data">Select Any Dietary Restricitons</label>
                             </div>
                             <div>All fields may be modified later in settings.</div>
                         </div>
@@ -136,11 +137,12 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
 
                             {{!-- attempting to console log from pressing here --}}
-                            <button type="submit" class="btn btn-primary user-form">Continue</button>
+                            <button type="submit" class="btn btn-primary ">Continue</button>
                         </div>
                         </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
