@@ -2,6 +2,18 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const User = require('../../models/user');
 
+router.get('/', (req, res) => {
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 router.post('/', (req, res) => {
     console.log(User)
     console.log("------------------")
