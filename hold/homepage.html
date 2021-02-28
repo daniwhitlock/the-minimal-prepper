@@ -27,19 +27,56 @@
                 <div class="col-md-3">
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#">Login</a>
+                            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                Log In
+                            </button>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link active" href="#">Blogs</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link active" href="#">?</a>
+                            <button type="button" class="btn btn-light"">
+                                Articles
+                            </button>
                         </li>
                       </ul>
                 </div>
             </div>
         </div>
-        
+    </header>
+
+        <!--login modal-->
+
+                    <!--MODAL-->
+                    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                              <h5 class="modal-title">Sign In!</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword"  placeholder="name@example.com">
+                                <label for="floatingPassword">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
+                                <button type="button" class="btn btn-secondary">Go</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+
+        <!--hero section-->
         <div class="container hero-section">
             <div class="row">
                 
@@ -49,29 +86,34 @@
                 </div>
 
 
-                <div class="col-md-12 text-center">
+                <div class="extended col-md-12 text-center">
             
                       <div class="p-3  signup-card mb-2 bg-transparent text-dark card w-50 border border-4 rounded-start">
                         <div class="card-body">
                           <h5 class="card-title">CREATE AN ACCOUNT AND START PREPPING TODAY!</h5>
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <p class="card-text">Minimal Prepper makes it easy and stress-free to prepare for any disaster or emergency.</p>
+                          <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#signupModal">
                             Get Started
                         </button>
                         </div>
                       </div>
                 
-                    <!--MODAL-->
+
+
+
+
+
+
                     <!-- Button trigger modal -->
                     
   
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Let's get signed up</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Exit"></button>
+                            <h5 class="modal-title" id="signupModalLabel">Let's get signed up</h5>
+                            <button type="button" class="btn btn-light btn-close" data-bs-dismiss="modal" aria-label="Exit"></button>
                         </div>
 
                         <div class="modal-body">
@@ -140,7 +182,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Exit</button>
-                            <button type="button" class="btn btn-primary">Continue</button>
+                            <button type="button" class="btn btn-secondary">Continue</button>
                         </div>
                         </div>
                         </div>
@@ -151,9 +193,11 @@
 
         
         <div class="container main-section text-center">
+            
             <div class="row">
                 <div class="col-8 blog-section ">
                     <img src="helpfularticle.png"  id="title1" class="img-fluid height: auto;" alt="Responsive image">
+                    <div class="scrollbar">
                     <div class="text-center card text-dark bg-light mb-3" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
@@ -176,6 +220,27 @@
                     <div class="text-center card text-dark bg-light mb-3" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, nisi eligendi alias ut dignissimos, 
+                            error non, officia molestias cum harum quia omnis officiis possimus adipisci sequi eaque. Incidunt, assumenda quidem.</p>
+                    </div>
+                    </div>
+
+                    <div class="text-center card text-dark bg-light mb-3" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque temporibus quam et necessitatibus 
+                            molestias, eius maiores beatae laudantium rem optio pariatur iure sapiente nihil esse vel dignissimos officia doloribus 
+                            eum!</p>
+                    </div>
+                    </div>
+
+                    <div class="text-center card text-dark bg-light mb-3" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
                         <h5 class="card-title">Light card title</h5>
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
                             minus maiores.
@@ -184,31 +249,39 @@
                             ducimus sequi vero inventore sit eos! Cumque nihil quas assumenda.</p>
                     </div>
                     </div>
+                    </div>
                 </div>
             
+            
+
+
                 <div class="col tips-section">
 
                     <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
-
+                    <div class="scrollbar2">
                     <div class="card" style="width: 25rem;">
                         <div class="card-header">
                           Featured
                         </div>
-                        <div class="list-group list-group-flush">
+                        <ul class="list-group list-group-flush">
                           <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
                               incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
                                reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
-                                Voluptates, quisquam!</li>
+                                Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
+                                corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
+                                saepe nemo, facere illum libero reiciendis alias accusamus delectus rem!</li>
                           <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
                                at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
-                                expedita fugiat incidunt blanditiis debitis neque.</li>
+                                expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
+                                elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
+                                iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
                           <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
                                quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
                                 eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
                         </ul>
                       </div>
-
-
+                      </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -226,11 +299,8 @@
 
 
 
-
-
-
         </div>
-    </header>
+
 
 
 

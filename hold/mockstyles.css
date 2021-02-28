@@ -1,18 +1,22 @@
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
+}
 
 :root {
     --green-color: #6c9f7f;
     --blue-color: #2C518F;
+    --second-green: #8bb69b;
+}
+
+.nav-link {
+    color: black;
+    background-color: white;
 }
 
 
-
 .profileBar, .homepageBar  {
-    background-color: var(--green-color);
+    background-color: var(--blue-color);
 }
 
 .profileMargin {
@@ -62,37 +66,60 @@
 
 
 .signup-card {
-    margin:auto;
-    margin-top: 65px;
-
+    margin: auto;
 }
 
+.extended {
+    margin-bottom: 20px;
+}
+
+
+
 .hero-section {
-    background-image: linear-gradient(#6c9f7f 10%,#2C518F);
+    background-image: linear-gradient(#2C518F, #6c9f7f);
+    width: 100%;
 }
 
 .main-section {
-    background-color: var(--blue-color);
-    
-    
+    background-color: var(--green-color);
 }
 
 .blog-section {
-    margin-top: 65px;
-   
+    margin-top: 100px;
+
 }
 
+.scrollbar, .scrollbar2 {
+    height: 550px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--second-green);
+    border-radius: 20px;
+}    
+
 .tips-section {
-    margin-top: 65px;
-    
+    margin-top: 100px;
+}
+
+.logo {
+    margin-bottom: 100px;
 }
 
 #title1 {
     height: 100px;
+    margin-bottom: 20px;
 }
 
 #title2 {
     height: 100px;
+    margin-bottom: 20px;
 }
 
 #logo2 {
