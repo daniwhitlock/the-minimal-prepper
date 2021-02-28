@@ -1,4 +1,5 @@
-{{!-- <!DOCTYPE html>
+{{!--
+<!DOCTYPE html>
 <html lang="en"> --}}
 
 {{!--
@@ -30,7 +31,13 @@
                 <div class="col-md-3">
                     <ul class="nav nav-pills justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Login</a>
+                            <a class="nav-link active" href="#">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#logInModal">
+                                    Login
+                                </button>
+                                {{> login}}
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Blogs</a>
@@ -61,108 +68,109 @@
                     </button>
 
                     <!-- Modal -->
-<form class="user-form">
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Let's get signed up</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Exit"></button>
-                                </div>
-
-                                <div class="modal-body">
-
-                                    <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="username-signup">
-                                        <label for="username-signup">Enter a username</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="email-data"
-                                            placeholder="name@example.com">
-                                        <label for="email-data">Email</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" id="password-data"
-                                            placeholder="Password">
-                                        <label for="password-data">Password</label>
+                    <form class="user-form">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Let's get signed up</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Exit"></button>
                                     </div>
 
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="underSeven-data"
-                                            aria-label="Floating label select example">
-                                            <option selected>0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                        <label for="underSeven-data">Select the number of those who under the age of
-                                            7.<label>
-                                    </div>
+                                    <div class="modal-body">
 
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="overSeven-data"
-                                            aria-label="Floating label select example">
-                                            <option selected>0</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                        <label for="overSeven-data">Select the number of those who are older than the
-                                            age of 7.</label>
-                                    </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="username-signup">
+                                            <label for="username-signup">Enter a username</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="email-data"
+                                                placeholder="name@example.com">
+                                            <label for="email-data">Email</label>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input type="password" class="form-control" id="password-data"
+                                                placeholder="Password">
+                                            <label for="password-data">Password</label>
+                                        </div>
 
-                                    <!--time-->
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="weeksPrep-data"
-                                            aria-label="Floating label select example">
-                                            <option value="1">1 month</option>
-                                            <option value="2">3 months</option>
-                                            <option value="3">6 months</option>
-                                            <option value="1">9 months</option>
-                                            <option value="12">12 months</option> 
-                                        </select>
-                                        <label for="weeksPrep-data">How much time are you wanting to prepare
-                                            for?</label>
-                                    </div>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="underSeven-data"
+                                                aria-label="Floating label select example">
+                                                <option selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <label for="underSeven-data">Select the number of those who under the age of
+                                                7.<label>
+                                        </div>
 
-                                    <!--Dietary options-->
-                                    {{!-- <div class="form-floating mb-3">
-                                        <select class="form-select" id="diet-data"
-                                            aria-label="Floating label select example">
-                                            <option selected>None</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                            <option value="4">Four</option>
-                                        </select>
-                                        <label for="diet-data">Select Any Dietary Restricitons</label>
-                                    </div> --}}
-                                    <div>All fields may be modified later in the Pantry Generator.</div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Exit</button>
-                                    <button type="submit" class="btn btn-primary">Continue</button>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="overSeven-data"
+                                                aria-label="Floating label select example">
+                                                <option selected>0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                            </select>
+                                            <label for="overSeven-data">Select the number of those who are older than
+                                                the
+                                                age of 7.</label>
+                                        </div>
+
+                                        <!--time-->
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" id="weeksPrep-data"
+                                                aria-label="Floating label select example">
+                                                <option value="1">1 month</option>
+                                                <option value="2">3 months</option>
+                                                <option value="3">6 months</option>
+                                                <option value="1">9 months</option>
+                                                <option value="12">12 months</option>
+                                            </select>
+                                            <label for="weeksPrep-data">How much time are you wanting to prepare
+                                                for?</label>
+                                        </div>
+
+                                        <!--Dietary options-->
+                                        {{!-- <div class="form-floating mb-3">
+                                            <select class="form-select" id="diet-data"
+                                                aria-label="Floating label select example">
+                                                <option selected>None</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                                <option value="4">Four</option>
+                                            </select>
+                                            <label for="diet-data">Select Any Dietary Restricitons</label>
+                                        </div> --}}
+                                        <div>All fields may be modified later in the Pantry Generator.</div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Exit</button>
+                                        <button type="submit" class="btn btn-primary">Continue</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -210,34 +218,16 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     </header>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
 
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    
     {{!-- jquery and javascript to get information from page --}}
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="/javascript/login.js"></script>
@@ -249,7 +239,10 @@
         crossorigin="anonymous"></script>
 </body>
 
-{{!-- <script src="/javascript/login.js"></script> --}}
+{{!--
+<script src="/javascript/login.js"></script> --}}
 
 
-{{!-- </html> --}}
+{{!--
+
+</html> --}}

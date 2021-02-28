@@ -72,13 +72,30 @@ async function userCreate(event) {
 }
 // console.log(document.querySelector('.user-form'))
 
-//working on homepage handlebars in form.
+async function loginForm(event) {
+  event.preventDefault();
+
+  const username = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+
+  if (username && password) {
+      const response = await fetch('/api/users/login', {
+          method: 'post',
+          body: JSON.stringify({
+              username,
+              password
+          }),
+          headers: { 'Content-Type': 'application/json' }
+      });
+
+      if (response.ok) {
+         document.location.replace('/profile');
+      } else {
+          alert(response.statusText);
+      }
+  }
+}
+
 document.querySelector('.user-form').addEventListener('submit', userCreate);
+document.querySelector('.user-login').addEventListener('submit', loginForm);
 
-// $(".user-form").on('submit', userCreate)
-
-// $(".user-form").click(function(){
-//     console.log('pass')
-// })
-
-// $(".user-form").click('submit', userCreate)
