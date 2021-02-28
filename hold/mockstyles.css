@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 :root {
@@ -69,6 +70,11 @@ body {
     margin: auto;
 }
 
+.white {
+    color: white;
+    font-weight: bold;
+}
+
 .extended {
     margin-bottom: 20px;
 }
@@ -104,8 +110,14 @@ body {
     border-radius: 20px;
 }    
 
+::-webkit-scrollbar-track {
+    background-color: var(--green-color);
+
+}
+
 .tips-section {
     margin-top: 100px;
+    margin-right: 20px;
 }
 
 .logo {
