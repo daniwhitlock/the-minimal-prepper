@@ -34,6 +34,6 @@ app.use(require('./controllers/'));
 // app.use('/boot', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
   });
