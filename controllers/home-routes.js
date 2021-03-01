@@ -12,40 +12,50 @@ router.get('/', (req, res) => {
 router.get('/login')
 
 router.get('/profile', (req, res) => {
-  console.log(req.session);
-  // Post.findAll({
+  console.log("--------------------------")
+  console.log(req.session.username)
+  
+  User.findOne({
+    where: {
+      id: req.session.user_id
+  }}).then(userdata => {
+      const logedinuser = JSON.stringify(userdata)
+      
+    console.log(logedinuser)
+    res.render('profile', {user: userdata} )
+  })
+  // User.findAll({
   //   attributes: [
   //     'id',
-  //     'post_url',
-  //     'title',
+  //     'username',
   //     'created_at',
-  //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+  //     // [sequelize.literal('(SELECT * FROM user)'),]
   //   ],
-  //   include: [
-  //     {
-  //       model: Comment,
-  //       attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-  //       include: {
-  //         model: User,
-  //         attributes: ['username']
-  //       }
-  //     },
-  //     {
-  //       model: User,
-  //       attributes: ['username']
-  //     }
-  //   ]
+  //   // include: [
+  //   //   {
+  //   //     model: User,
+  //   //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+  //   //     include: {
+  //   //       model: User,
+  //   //       attributes: ['username']
+  //   //     }
+  //   //   },
+  //   //   {
+  //   //     model: User,
+  //   //     attributes: ['username']
+  //   //   }
+  //   // ]
   // })
   //   .then(dbPostData => {
   //     // pass a single post object into the homepage template
-  //     const posts = dbPostData.map(post => post.get({ plain: true }));
-  //     res.render('homepage', { posts });
+  //     const users = dbPostData.map(user => user.get({ plain: true }));
+  //     res.render('profile', { users });
   //   })
   //   .catch(err => {
   //     console.log(err);
   //     res.status(500).json(err);
   //   });
-  res.render('profile', { req })
+  
 });
 
 module.exports = router;
