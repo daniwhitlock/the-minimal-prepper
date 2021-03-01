@@ -1,7 +1,7 @@
 {
   "name": "the-minimal-prepper",
   "version": "1.0.0",
-  "description": "",
+  "description": "npm packages used\r npm init -y \r npm install express sequelize mysql2\r npm i bcrypt\r npm i dotenv\r npm install express-handlebars\r npm i express-session connect-session-sequelize\r npm install --save-dev nodemon (use this to not have to ctrl + C then restart database when making a change)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,5 +32,8 @@
     "mysql2": "^2.2.5",
     "path": "^0.12.7",
     "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
