@@ -11,7 +11,7 @@ body {
 }
 
 .profileBar {
-    background-color: var(--blue-color);
+    background-color:var(--blue-color);
 }
 
 .nav-item {
@@ -64,7 +64,7 @@ body {
     margin-right: 20px;
 }
 
-.logo {
+.logo2 {
     margin-bottom: 100px;
 }
 
@@ -82,9 +82,81 @@ body {
     height: 100px;
 }
 
-.img {
-    width: 100%;
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.white {
+    color: white;
 }
 
 
 
+
+
+
+
+
+@media (min-width: 576px) {  
+   .logo1 {
+    max-height: 100px;
+   }
+
+   .logo2 {
+       max-height: 274px;
+       margin-top: 20px;
+   }
+
+   .signup-card {
+       min-width: 360px;
+   }
+
+   .blog-section{
+       min-width: 580px;
+   }
+
+   .blog-section {
+        min-width: 580px;
+   }
+
+   #title1 {
+        height: 76px;
+        margin-bottom: 20px;
+    }
+
+    #title2 {
+        height: 170px;
+        align-content: center;
+    }
+
+    .tip-card {
+        width: 50rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+}
+
+
+@media (min-width: 992px) {  
+
+}
+
+
+
+
+
+@media (min-width: 1200px) { 
+
+}
