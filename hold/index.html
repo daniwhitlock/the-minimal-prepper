@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="/javascript/profiletest.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="mockstyles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;1,200;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profilestyles.css">
 
     <title>Minimal Prepper</title>
 
@@ -18,291 +20,341 @@
 <body>
 
     <header>
-        <div class="container profileBar">
-
-            <div class="row profileMargin">
-                <div class="col-3">
+        <div class="container-fluid profileBar">
+            <!--NAVIGATION-->
+            <div class="row">
+                <!--LOGO-->
+                <div class="col-md-6">
+                   <img class="logo" id="logo3" src="small-logo2.png" alt="Responsive image">
+                </div>
+                <!--SEARCH BAR-->
+                <div class="col-2 profile-col">
                     <div class="input-group">
                         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                            aria-describedby="search-addon" />
-                        <button type="button" class="btn btn-outline-primary">search</button>
+                            aria-describedby="search-addon"/>
+                        <button type="button" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
-
-                <div class="col-9">
-                    <div class="row">
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-primary">Blog/Post</button>
-                        </div>
-
-                        <!-- <div class="col">
-                            <button type="button" class="btn btn-outline-primary">Primary</button>
-                        </div> -->
-
-                        <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Account</option>
-                                <option value="1">Update Profile</option>
-                                <option value="2">Log Out</option>
-                            </select>
-                        </div>
-                    </div>
+                <!--ACCOUNT SETTINGS-->
+                <div class="col-3 profile-col">
+                    <select class="form-select  justify-content-end" aria-label="Default select example">
+                        <option selected>Account</option>
+                        <option value="1">Update Profile</option>
+                        <option value="2">Log Out</option>
+                    </select>
                 </div>
             </div>
         </div>
-
     </header>
 
-    <body>
 
-        <div class="container imgPadding">
+    <div class="container-fluid main-section text-center">
+    
+        <div class="row">
+            <div class="col-3 picutre-col">
+            <!--PROFILE PICTURE-->
+            <div class="card picture-card" style="width: 20rem;">
+                <img src="Futurama-on-Syfy-700x300.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">USERNAME HERE</p>
+                </div>
+            </div>
 
-            <div class="row justify-content-between">
-
-                <div class="col-3">
-
-                    <img src="../images/Futurama-on-Syfy-700x300.jpg" />
-
-                    
-
-
-                        
-                        <!-- <select class="form-select" aria-label="Default select example">
-                    <option selected>Account</option>
-                    <option value="1">Update Profile</option>
-                    <option value="2">Log Out</option>
-                 </select> -->
-
-                        <!-- <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
-                      </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                      </div>
-                    </div> -->
-                    <div class="blogPostBox pantryBox">
+            <!--PANTRY GENERATOR AND CHECKLISTS-->
+            <div class="card  text-dark bg-light mb-3" style="max-width: 20rem;">
+                <h5 class="card-header">Pantry Items</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
                         Pantry Generator
-                        <div class="row">
-                            <div class="col custom-control custom-checkbox">
+                    </button>
+                    {{> pantrygenerator}}
 
-                                <label class="custom-control-label" for="customCheck1">2W</label>
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
-                            </div>
-
-                            <div class="col custom-control custom-checkbox">
-
-                                <label class="custom-control-label" for="customCheck1">1M</label>
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            </div>
-
-                            <div class="col custom-control custom-checkbox">
-
-                                <label class="custom-control-label" for="customCheck1">3M</label>
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            </div>
-
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item1</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item2</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item3</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        </div>
-
-
+                    <div class="goal">
+                        {{!-- input amount of months for pantry generator --}}
+                        Goal: <span id="timeGoal"></span>
                     </div>
 
-                    <div class="blogPostBox pantryBox">
-                        72 Hour Kit
-                        
+                    <table style="width:100%" class="left-white">
+                    <tr>
+                        <th>Item </th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Grains (lbs)</td>
+                        {{!-- dependent on the # of people and length of time --}}
+                        <td id="grainsAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkGrains"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkGrains">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Legumes/Beans (lbs)</td>
+                        <td id="legumesAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkLegumes"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkLegumes">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Milk (lbs)</td>
+                        <td id="milkAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkMilk"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkMilk">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sugars (lbs)</td>
+                        <td id="sugarAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkSugar"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkSugar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fats/Oils (lbs)</td>
+                        <td id="fatsAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkFats"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkFats">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fruits/Veggies (lbs)</td>
+                        <td id="fruitsVeggiesAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkFruitsVeggies"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Salt (lbs)</td>
+                        <td id="saltAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkSalt"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkSalt">
+                        </td>
+                    </tr>
+                      <tr>
+                        <td>Water (gal)</td>
+                        <td id="waterAmount"></td>
+                        <td>
+                            <label class="custom-control-label" for="checkWater"></label>
+                            <input type="checkbox" class="custom-control-input" id="checkWater">
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+            <!--PANTRY GENERATOR END-->
 
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item1</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item2</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-
-                            <label class="custom-control-label" for="customCheck1">Item3</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        </div>
-
-
-                    </div>
-
+            <!--72 HOUR KIT-->
+            <div class="card  text-dark bg-light mb-3" style="max-width: 20rem;">
+                <h5 class="card-header">72 Hour Kit</h5>
+                <div class="card-body">
+                
+                <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label" for="customCheck1">Item1</label>
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
                 </div>
 
-                <div class="col-6">
-
-
-                    <div class="blogPostBox blogPostAlign">
-                        Blog/Post
-                    </div>
-
-                    <div class="blogPostBox">
-                        <div class="form-group">
-
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
-
-                        <div class="blogPostSubmit">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-
-                        <!-- <div class="custom-file">
-                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                <div class="invalid-feedback">Example invalid custom file feedback</div>
-              </div> -->
-
-              
-
-
-
-
-
-                    </div>
-                    <div class="blogPostBox">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
-                        officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
-                        eligendi consectetur maxime odit.
-                    </div>
-
-                    <div class="blogPostBox">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                        minus maiores.
-                    </div>
-
-                    <div class="blogPostBox">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                        minus maiores.
-                    </div>
-
-                    <div class="blogPostBox">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                        minus maiores.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptas odio reiciendis,
-                        consequuntur neque alias commodi doloribus
-                        ducimus sequi vero inventore sit eos! Cumque nihil quas assumenda.
-                    </div>
-
-                    <div class="blogPostBox">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                        minus maiores.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sed similique harum reiciendis qui
-                        labore incidunt iusto
-                        reprehenderit deserunt soluta. Repudiandae eos atque inventore a eaque amet. Placeat accusantium
-                        quam at ratione odit eius
-                        veritatis vero, distinctio, exercitationem, nulla aspernatur! Quaerat nesciunt, aspernatur
-                        dolores debitis blanditiis
-                        ratione id a consequuntur magnam quibusdam, iusto et minus at earum inventore qui magni eius
-                        perspiciatis, explicabo esse
-                        atque repellat corporis quod! Dolores deserunt laudantium, non saepe soluta architecto ullam
-                        eaque eligendi odit iusto rem
-                        laboriosam perspiciatis accusamus? Placeat tempora magni iste iusto eius beatae vitae error
-                        recusandae quae rerum reprehenderit
-                        sed consequatur minus commodi est sequi labore quia blanditiis eveniet non, libero ad atque!
-                        Deserunt esse, ducimus nesciunt
-                        laborum voluptas dolorem perferendis dolor?
-                    </div>
+                <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label" for="customCheck1">Item2</label>
+                    <input type="checkbox" class="custom-control-input" id="customCheck2">
                 </div>
 
-                <div class="col-3">
-                    <div class="funnyTipsBox">
-                        Funny Tips
+                <div class="custom-control custom-checkbox">
+                    <label class="custom-control-label" for="customCheck1">Item3</label>
+                    <input type="checkbox" class="custom-control-input" id="customCheck3">
                     </div>
-
-                    <div class="funnyTipsBox">
-                        Friends List
-                    </div>
-                    
                 </div>
-
             </div>
         </div>
-
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-          </div>
-
-
-
-
-
-
-        <!-- <div>
-            checklist
-            <div>
-                <ol>
-                    <li>
-                        Pantry Generator
-                    </li>
-                    <li>
-                        72 hour kit
-                    </li>
-                </ol>
+        <!--first col end-->
+    
+        <!--ARTICLES / NEWS FEED SECTION-->
+        <div class="col-6 blog-section text-center">
+        <img src="helpfularticle.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+            <!--TABS-->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-article-tab" data-bs-toggle="tab" data-bs-target="#nav-articles" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ARTICLES</button>
+                  <button class="nav-link" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">News Feed</button>
+                </div>
+            </nav>
+                <!--ARTICLES CONTENT-->
+                <div class="scrollbar">
+                <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-articles" role="tabpanel" aria-labelledby="nav-article-tab">
+                    
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                    </div>
+                    </div>
+                    
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores.</p>
+                    </div>
+                    </div>
+                        
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, nisi eligendi alias ut dignissimos, 
+                            error non, officia molestias cum harum quia omnis officiis possimus adipisci sequi eaque. Incidunt, assumenda quidem.</p>
+                    </div>
+                    </div>
+        
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque temporibus quam et necessitatibus 
+                            molestias, eius maiores beatae laudantium rem optio pariatur iure sapiente nihil esse vel dignissimos officia doloribus 
+                            eum!</p>
+                    </div>
+                    </div>
+        
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Light card title</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
+                            minus maiores.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptas odio reiciendis,
+                            consequuntur neque alias commodi doloribus
+                            ducimus sequi vero inventore sit eos! Cumque nihil quas assumenda.</p>
+                    </div>
+                    </div>
+    
+                    </div>
+                    </div>
+                </div>
+                <!--ARTICLES CONTENT END-->
+                <!--NEWS FEED CONTENT-->
+                <div class="tab-pane fade" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptas voluptatibus id illo rem eum? Accusamus corrupti quis voluptates sint quisquam. At, iusto libero consectetur quas reprehenderit temporibus dolorum odio.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quam, a veniam qui modi fuga, debitis amet molestias ipsum earum distinctio sapiente! Aliquid ut animi a, cumque impedit fuga sunt?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit vitae nobis incidunt, ducimus nihil. Ipsum sapiente ullam pariatur beatae aperiam recusandae, delectus eum? Amet hic unde non sunt officia?
+                </div>
+                <!--NEWS FEED CONTENT END-->
+            </div>
+            <!--TAB CONTENT END-->
+        <!--ARTICLES / NEWS FEED END-->
+        
+        
+        <!--TIPS / ALERTS SECTION-->
+        <div class="col-3 tips-section text-center">
+            <!--TIPS-->
+            <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+            <div class="scrollbar2">
+            <div class="card mx-auto" style="width: 25rem;">
+                <div class="card-header">
+                  Featured
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
+                      incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
+                       reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
+                        Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
+                        corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
+                        saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum dolor sit amet
+                         consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates voluptas 
+                         eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.</li>
+                  <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+                       at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
+                        expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
+                        elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
+                        iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
+                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
+                       quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
+                        eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
+                </ul>
+            </div>
+            
+            <!--EMERGENCY ALERTS SECTION-->
+            <div class="alerts-section">
+            <!--<img src="alerts.png" id="title3" alt="Responsive image">!-->
+            <div class="scrollbar2">
+            <div class="card mx-auto" style="width: 25rem;">
+                <div class="card-header">
+                  Featured
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
+                      incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
+                       reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
+                        Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
+                        corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
+                        saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum dolor sit amet
+                         consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates voluptas 
+                         eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.</li>
+                  <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+                       at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
+                        expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
+                        elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
+                        iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
+                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
+                       quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
+                        eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
+                </ul>
+            </div>
+            </div>
             </div>
         </div>
-        <div>
-            Comment/Post/feed - middle
-        </div>
-        <div>
-            Tips
-            <ol>
-                <li>
-                    Average adult needs 52 rolls of toilet paper per year
-                </li>
-                <li>
-                    Other fun facts
-                </li>
-            </ol>
-        </div> -->
+        <!--TIPS / ALERTS SECTION END-->
+
+
+    </div>
+    <!--MAIN SECTION END-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    
     </body>
-    <script src="profile.js"></script>
-</body>
-<div></div>
 </html>

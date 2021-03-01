@@ -10,76 +10,22 @@ body {
     --second-green: #8bb69b;
 }
 
-.nav-link {
-    color: black;
-    background-color: white;
-}
-
-
-.profileBar, .homepageBar  {
+.profileBar {
     background-color: var(--blue-color);
-}
-
-.profileMargin {
-    padding: 10px;
-}
-
-.imgPadding {
-    margin: 20px;
-    padding: 0px;
-}
-
-.blogPostBox {
-    background-color: var(--blue-color);
-    margin: 5px;
-}
-
-.funnyTipsBox {
-    background-color: var(--blue-color);   
-    text-align: center;
-    margin: 5px;
-
-    /* for layout only */
-    height: 200px;
-}
-
-.blogPostAlign{
-    text-align: center;
-    font-size: 25px;
-}
-
-.pantryBox{
-    width: 200px;
-    margin: 5px 0px;
-}
-
-.blogPostSubmit {
-    margin: 5px;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .nav-item {
     margin: 5px;
     display: flex;
-    
 }
-
 
 .signup-card {
     margin: auto;
 }
 
-.white {
-    color: white;
-    font-weight: bold;
-}
-
 .extended {
     margin-bottom: 20px;
 }
-
-
 
 .hero-section {
     background-image: linear-gradient(#2C518F, #6c9f7f);
@@ -92,7 +38,6 @@ body {
 
 .blog-section {
     margin-top: 100px;
-
 }
 
 .scrollbar, .scrollbar2 {
@@ -112,7 +57,6 @@ body {
 
 ::-webkit-scrollbar-track {
     background-color: var(--green-color);
-
 }
 
 .tips-section {
@@ -137,27 +81,3 @@ body {
 #logo2 {
     height: 100px;
 }
-
-.custom-element {
-    color: color-yiq(#000); 
-  }
-
-  .white-letters {
-      color: white;
-  }
-
-  .goal {
-      color: white;
-      background: #6c9f7f;
-      font-weight: bold;
-  }
-
-  .center {
-      text-align: center;
-  }
-
-  .left-white {
-      text-align: left;
-      color: white;
-  }
-
