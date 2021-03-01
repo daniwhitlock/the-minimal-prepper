@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="mockstyles.css">
 
     <title>Minimal Prepper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 
 <body>
@@ -22,23 +23,25 @@
         <div class="container-fluid profileBar">
             <!--NAVIGATION-->
             <div class="row">
-                <div class="col-md-9">
-                   <img class="logo" id="logo2" src="logo2 copy.png" class="img-fluid height: auto;" alt="Responsive image">
+                <div class="col-md-10">
+                   <img class="logo1" src="logo2 copy.png" >
                 </div>
                 
-                <div class="col-md-3">
-                    <ul class="nav nav-pills justify-content-end">
+                <div class="col-md-2 justify-content-end">
+                    <ul class="nav nav-pills">
                         <li class="nav-item">
                             <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 Log In
                             </button>
                         </li>
+                
                         <li class="nav-item">
                             <button type="button" class="btn btn-outline-light">
                                 Articles
                             </button>
                         </li>
                       </ul>
+                      
                 </div>
             </div>
         </div>
@@ -83,7 +86,7 @@
             <div class="row">
                 
                 <div class="col-md-12 text-center">
-                 <img class="logo" src="logo1 copy.png" class="img-fluid height: auto;">
+                 <img class="logo2" src="logo1 copy.png" class="img-fluid height: auto;">
                     
                 </div>
 
@@ -194,13 +197,13 @@
         </div>
 
         
-        <div class="container-fluid main-section text-center">
+        <div class="container-fluid main-section">
             
             <div class="row">
                 <div class="col-8 blog-section text-center">
-                    <img src="helpfularticle.png"  id="title1" class="img-fluid height: auto;" alt="Responsive image">
+                    <img src="helpfularticle.png"  id="title1"  alt="Responsive image">
                     <div class="scrollbar">
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 75rem;">
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -210,7 +213,7 @@
                     </div>
                     </div>
                     
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 75rem;">
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -219,7 +222,7 @@
                     </div>
                     </div>
                         
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 75rem;">
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -229,7 +232,7 @@
                     </div>
                     </div>
 
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 75rem;">
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
                         <h5 class="card-title">Title</h5>
@@ -240,7 +243,7 @@
                     </div>
                     </div>
 
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 75rem;">
+                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
                         <div class="card-header">Header</div>
                         <div class="card-body">
                         <h5 class="card-title">Light card title</h5>
@@ -257,34 +260,37 @@
             
 
 
-                <div class="col tips-section text-center">
+                <div class="col-4 tips-section">
 
-                    <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+                    <img src="tips2.png" id="title2" class="img-fluid height: auto;" alt="Responsive image">
                     <div class="scrollbar2">
-                    <div class="card mx-auto" style="width: 35rem;">
+                    <div class="card tip-card mx-auto" style="width: 35rem;">
+                        
                         <div class="card-header">
-                          Featured
+                            Featured
+                          </div>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
+                                incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
+                                 reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
+                                  Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
+                                  corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
+                                  saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum dolor sit amet
+                                   consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates voluptas 
+                                   eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.</li>
+                            <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+                                 at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
+                                  expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
+                                  elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
+                                  iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
+                            <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
+                                 quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
+                                  eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
+                          </ul>
                         </div>
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
-                              incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
-                               reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
-                                Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
-                                corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
-                                saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum dolor sit amet
-                                 consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates voluptas 
-                                 eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.</li>
-                          <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
-                               at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
-                                expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
-                                elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
-                                iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
-                          <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
-                               quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
-                                eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
-                        </ul>
-                      </div>
-                      </div>
+                    </div>
+                </div>
+                      
                 </div>
                 </div>
             </div>
