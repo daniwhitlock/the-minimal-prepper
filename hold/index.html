@@ -24,20 +24,20 @@
             <!--NAVIGATION-->
             <div class="row">
                 <!--LOGO-->
-                <div class="col-md-6">
+                <div class="col-9">
                    <img class="logo" id="logo3" src="small-logo2.png" alt="Responsive image">
                 </div>
                 <!--SEARCH BAR-->
-                <div class="col-2 profile-col">
-                    <div class="input-group">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                <div class="col-2 padding">
+                    <div class="input-group w-100 profile-col">
+                        <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
                             aria-describedby="search-addon"/>
-                        <button type="button" class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
+                        <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
                     </div>
                 </div>
                 <!--ACCOUNT SETTINGS-->
-                <div class="col-3 profile-col">
-                    <select class="form-select  justify-content-end" aria-label="Default select example">
+                <div class="col-1 padding">
+                    <select class="form-select w-78 profile-col justify-content-end" aria-label="Default select example">
                         <option selected>Account</option>
                         <option value="1">Update Profile</option>
                         <option value="2">Log Out</option>
@@ -52,30 +52,30 @@
     
         <div class="row">
             <div class="col-3 picutre-col">
-            <!--PROFILE PICTURE-->
-            <div class="card picture-card" style="width: 20rem;">
-                <img src="Futurama-on-Syfy-700x300.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">USERNAME HERE</p>
+                <!--PROFILE PICTURE-->
+                <div class="card picture-card" style="width: 24rem;">
+                    <img src="Futurama-on-Syfy-700x300.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">USERNAME HERE</p>
+                    </div>
                 </div>
-            </div>
 
-            <!--PANTRY GENERATOR AND CHECKLISTS-->
-            <div class="card  text-dark bg-light mb-3" style="max-width: 20rem;">
-                <h5 class="card-header">Pantry Items</h5>
-                <div class="card-body">
-                    <p class="card-text">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
+                <!--PANTRY GENERATOR AND CHECKLISTS-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <h5 class="card-header">Pantry Items</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
                         Pantry Generator
-                    </button>
-                    {{> pantrygenerator}}
+                        </button>
+                        {{> pantrygenerator}}
 
-                    <div class="goal">
+                        <div class="goal">
                         {{!-- input amount of months for pantry generator --}}
                         Goal: <span id="timeGoal"></span>
-                    </div>
+                        </div>
 
-                    <table style="width:100%" class="left-white">
+                        <table style="width:100%" class="left-white">
                     <tr>
                         <th>Item </th>
                         <th>Amount</th>
@@ -146,124 +146,226 @@
                             <input type="checkbox" class="custom-control-input" id="checkWater">
                         </td>
                     </tr>
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <!--PANTRY GENERATOR END-->
+                <!--PANTRY GENERATOR END-->
 
-            <!--72 HOUR KIT-->
-            <div class="card  text-dark bg-light mb-3" style="max-width: 20rem;">
-                <h5 class="card-header">72 Hour Kit</h5>
-                <div class="card-body">
+                <!--72 HOUR KIT-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <h5 class="card-header">72 Hour Kit</h5>
+                    <div class="card-body">
                 
-                <div class="custom-control custom-checkbox">
-                    <label class="custom-control-label" for="customCheck1">Item1</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                </div>
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Water (1 G per person / per day</label>
+                        
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <label class="custom-control-label" for="customCheck1">Item2</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                </div>
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Food and Utensils</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                        
+                    </div>
 
-                <div class="custom-control custom-checkbox">
-                    <label class="custom-control-label" for="customCheck1">Item3</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">NOAA Weather Alert Radio (Hand crank/btry powered)</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Blankets/Pillows/
+                            Sleeping Bag</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <p></p>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Flashlight</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Whistle</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Dust or Filter Masks</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <p></p>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <p></p>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Can Opener</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <p></p>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        <p></p>
+                    </div>
+
+
+
                     </div>
                 </div>
             </div>
-        </div>
-        <!--first col end-->
+            <!--first col end-->
     
-        <!--ARTICLES / NEWS FEED SECTION-->
-        <div class="col-6 blog-section text-center">
-        <img src="helpfularticle.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+
+
+            <!--ARTICLES / NEWS FEED SECTION-->
+            <div class="col-6 blog-section">
             <!--TABS-->
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-article-tab" data-bs-toggle="tab" data-bs-target="#nav-articles" type="button" role="tab" aria-controls="nav-home" aria-selected="true">ARTICLES</button>
-                  <button class="nav-link" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">News Feed</button>
-                </div>
-            </nav>
-                <!--ARTICLES CONTENT-->
-                <div class="scrollbar">
-                <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-articles" role="tabpanel" aria-labelledby="nav-article-tab">
-                    
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                
+            
+                <ul class="nav nav-tabs id="sectionTab" role="tablist">
+                    <li class="nav-item role="presentation">
+                        <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article" type="button" role="tab" aria-controls="article" aria-selected="true">
+                            <img src="helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+                        </button>
+                    </li>
+                    <li class="nav-item role="presentation">
+                        <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button" role="tab" aria-controls="feed" aria-selected="false">
+                            <img src="feed.png" id="nav-title" class="img-fluid height: auto;">
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content rounded" id="sectionTabContent">
+                    <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
+    
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
                             officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
                             eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                            <h5 class="card-title">Title</h5>
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.</p>
+                        </div>
+                        </div>
                     </div>
+                
+                    <div class="tab-pane fade" id="feed" role="tabpanel" aria-labelledby="feed-tab">
+                        <div class="text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                            </div>
+                        </p>
+                        </div>
+                        </div>
+
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                            </div>
+                        </p>
+                        </div>
+                        </div>
+
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
+                            officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
+                            eligendi consectetur maxime odit.
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                            </div>
+                        </p>
+                        </div>
+                        </div>
+
+                       
                     </div>
+                </div>
+            </div>
+        
+
+
+
+                       
+                       
                     
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                            minus maiores.</p>
-                    </div>
-                    </div>
-                        
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                            minus maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, nisi eligendi alias ut dignissimos, 
-                            error non, officia molestias cum harum quia omnis officiis possimus adipisci sequi eaque. Incidunt, assumenda quidem.</p>
-                    </div>
-                    </div>
+                    
+                       
+              
         
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                            minus maiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque temporibus quam et necessitatibus 
-                            molestias, eius maiores beatae laudantium rem optio pariatur iure sapiente nihil esse vel dignissimos officia doloribus 
-                            eum!</p>
-                    </div>
-                    </div>
+
+
+
+
         
-                    <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                        <h5 class="card-title">Light card title</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                            minus maiores.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptas odio reiciendis,
-                            consequuntur neque alias commodi doloribus
-                            ducimus sequi vero inventore sit eos! Cumque nihil quas assumenda.</p>
-                    </div>
-                    </div>
-    
-                    </div>
-                    </div>
-                </div>
-                <!--ARTICLES CONTENT END-->
-                <!--NEWS FEED CONTENT-->
-                <div class="tab-pane fade" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptas voluptatibus id illo rem eum? Accusamus corrupti quis voluptates sint quisquam. At, iusto libero consectetur quas reprehenderit temporibus dolorum odio.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quam, a veniam qui modi fuga, debitis amet molestias ipsum earum distinctio sapiente! Aliquid ut animi a, cumque impedit fuga sunt?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem suscipit vitae nobis incidunt, ducimus nihil. Ipsum sapiente ullam pariatur beatae aperiam recusandae, delectus eum? Amet hic unde non sunt officia?
-                </div>
-                <!--NEWS FEED CONTENT END-->
-            </div>
-            <!--TAB CONTENT END-->
-        <!--ARTICLES / NEWS FEED END-->
-        
-        
-        <!--TIPS / ALERTS SECTION-->
-        <div class="col-3 tips-section text-center">
-            <!--TIPS-->
-            <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
-            <div class="scrollbar2">
-            <div class="card mx-auto" style="width: 25rem;">
+            <!--TIPS / ALERTS SECTION-->
+            <div class="col-3 text-center">
+                <!--TIPS-->
+                <div tips-section>
+                <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+                <!--<div class="scrollbar2">!-->
+                <div class="card mx-auto" style="width: 25rem;">
                 <div class="card-header">
                   Featured
                 </div>
@@ -285,41 +387,57 @@
                        quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
                         eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
                 </ul>
-            </div>
+                </div>
+                <!--</div>!-->
             
-            <!--EMERGENCY ALERTS SECTION-->
-            <div class="alerts-section">
-            <!--<img src="alerts.png" id="title3" alt="Responsive image">!-->
-            <div class="scrollbar2">
-            <div class="card mx-auto" style="width: 25rem;">
-                <div class="card-header">
-                  Featured
+                <!--EMERGENCY ALERTS SECTION-->
+                <div class="alerts-section">
+                    <img src="newalert.png" id="title3" alt="Responsive image">
+    
+                    <div class="accordion" style="width: 24rem;" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Alert 1
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p> ALERT 1 CONTENT </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Alert 2
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <p>ALERT 2 CONTENT</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               Alert 3
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              Alert 3 content
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, 
-                      incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum libero,
-                       reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
-                        Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus 
-                        corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum soluta 
-                        saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum dolor sit amet
-                         consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates voluptas 
-                         eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.</li>
-                  <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
-                       at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi, quis
-                        expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet consectetur, adipisicing 
-                        elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi, ipsa minima labore 
-                        iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
-                  <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere beatae
-                       quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel necessitatibus laudantium
-                        eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
-                </ul>
             </div>
-            </div>
-            </div>
+            <!--TIPS / ALERTS SECTION END-->
+    
         </div>
-        <!--TIPS / ALERTS SECTION END-->
-
-
+        <!--ROW END-->
     </div>
     <!--MAIN SECTION END-->
 
