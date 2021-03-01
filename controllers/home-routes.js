@@ -19,10 +19,23 @@ router.get('/profile', (req, res) => {
     where: {
       id: req.session.user_id
   }}).then(userdata => {
-      const logedinuser = JSON.stringify(userdata)
+      const loggedinuser = JSON.stringify(userdata)
+      const loggedInData = JSON.parse(loggedinuser)
+
+      // for (let i = 0; i < animals.length; i++) {
+      //   let currentAnimal = animals[i];
+    
+      //   if (currentAnimal.pet) {
+      //     data.animals.push(currentAnimal)
+    
+      //   }
+      // }
       
-    console.log(logedinuser)
-    res.render('profile', {user: userdata} )
+      console.log('this')
+    console.log(loggedInData)
+    console.log('this')
+    // res.render('profile', {user: userdata} )
+    res.render('profile', {loggedInData})
   })
   // User.findAll({
   //   attributes: [
