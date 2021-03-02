@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+// const cloudinary = require('cloudinary')
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
@@ -29,8 +29,9 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
-// app.use('/static', express.static('public'))
 
+// app.use('/static', express.static('public'))
+app.use
 // app.use('/boot', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 
 
