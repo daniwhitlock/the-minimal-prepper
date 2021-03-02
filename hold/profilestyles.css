@@ -11,7 +11,7 @@ body {
 }
 
 .profileBar {
-    background-image: linear-gradient( #8bb69b 40%, #2C518F);
+    background-image: linear-gradient( #8bb69b 20%, #2C518F);
     height: 200px;
 }
 
@@ -19,9 +19,19 @@ body {
     background-image: linear-gradient(#2C518F 30%, #6c9f7f);
 }
 
-.scrollbar {
-    height: 746px;
+.scrollbar2 {
+    height: 450px;
     overflow-y: scroll;
+}
+
+.scrollbar3 {
+    
+    background-color: transparent;
+    overflow-y: scroll;
+}
+
+.tab-content {
+    
 }
 
 ::-webkit-scrollbar {
@@ -39,8 +49,12 @@ body {
 }
 
 #title1 {
-    height: 50px;
+    height: 70px;
     margin-bottom: 20px;
+}
+
+#nav-title {
+    height: 40px;
 }
 
 #title2 {
@@ -49,7 +63,7 @@ body {
 }
 
 #title3 {
-    height: 350px;
+    height: 80px;
 }
 
 #logo3 {
@@ -61,33 +75,38 @@ body {
     margin-bottom: 15px;
 }
 
-.tab-content, .nav-link {
-    background-color: var(--blue-color)
+.tab-content {
+    background-color: transparent;
+}
+
+.blog-section {
+    background-color:transparent;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.card-padding {
+    margin-top: 20px;
 }
 
 .alerts-section {
     margin-top: 20px;
 }
 
-.profile-col {
-    margin: 7px;
-   
+.alerts-section {
+   align-content: right;
+}
+
+
+.padding {
+    padding: 5px;
 }
 
 
 
 
-
-
-
-
-
-
-.blogPostSubmit {
-    margin: 5px;
-    display: flex;
-    justify-content: flex-end;
-}
 
 .center {
     text-align: center;
