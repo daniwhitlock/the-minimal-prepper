@@ -56,7 +56,9 @@
                 <div class="card picture-card" style="width: 24rem;">
                     <img src="Futurama-on-Syfy-700x300.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <p class="card-text">USERNAME HERE</p>
+                        <p class="card-text">
+                            {{loggedInData.username}}
+                        </p>
                     </div>
                 </div>
 
@@ -362,7 +364,7 @@
             <!--TIPS / ALERTS SECTION-->
             <div class="col-3 text-center">
                 <!--TIPS-->
-                <div tips-section>
+                <div class="tips-section">
                 <img src="tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
                 <!--<div class="scrollbar2">!-->
                 <div class="card mx-auto" style="width: 25rem;">
@@ -393,8 +395,8 @@
                 <!--EMERGENCY ALERTS SECTION-->
                 <div class="alerts-section">
                     <img src="newalert.png" id="title3" alt="Responsive image">
-    
-                    <div class="accordion" style="width: 24rem;" id="accordionExample">
+                    <div class="accordion-section">
+                    <div class="accordion" style="width: 25rem;" id="accordionExample">
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -430,6 +432,7 @@
                               Alert 3 content
                             </div>
                           </div>
+                        </div>
                         </div>
                     </div>
                 </div>
