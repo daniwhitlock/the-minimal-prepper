@@ -81,28 +81,28 @@ function pantryCalculator(kids, adults, time) {
 
   foodData.push(goal);
 
-  var grainsAmount = (((400 * monthdivider) * (kids * .7)) + ((400 * monthdivider) * adults)).toFixed(2);
+  var grainsAmount = (((400 * monthdivider) * (kids * .7)) + ((400 * monthdivider) * adults)).toFixed(1);
   foodData.push(grainsAmount);
 
-  var legumesAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(2);
+  var legumesAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(1);
   foodData.push(legumesAmount);
 
-  var milkAmount = (((16 * monthdivider) * (kids * .7)) + ((16 * monthdivider) * adults)).toFixed(2);
+  var milkAmount = (((16 * monthdivider) * (kids * .7)) + ((16 * monthdivider) * adults)).toFixed(1);
   foodData.push(milkAmount);
 
-  var sugarAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(2);
+  var sugarAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(1);
   foodData.push(sugarAmount);
 
-  var fatsAmount = (((20 * monthdivider) * (kids * .7)) + ((20 * monthdivider) * adults)).toFixed(2);
+  var fatsAmount = (((20 * monthdivider) * (kids * .7)) + ((20 * monthdivider) * adults)).toFixed(1);
   foodData.push(fatsAmount);
 
-  var fruitsVeggiesAmount = (((90 * monthdivider) * (kids * .7)) + ((90 * monthdivider) * adults)).toFixed(2);
+  var fruitsVeggiesAmount = (((90 * monthdivider) * (kids * .7)) + ((90 * monthdivider) * adults)).toFixed(1);
   foodData.push(fruitsVeggiesAmount);
 
-  var saltAmount = (((8 * monthdivider) * (kids * .7)) + ((8 * monthdivider) * adults)).toFixed(2);
+  var saltAmount = (((8 * monthdivider) * (kids * .7)) + ((8 * monthdivider) * adults)).toFixed(1);
   foodData.push(saltAmount);
 
-  var waterAmount = (((365 * monthdivider) * (kids * .7)) + ((365 * monthdivider) * adults)).toFixed(2);
+  var waterAmount = (((365 * monthdivider) * (kids * .7)) + ((365 * monthdivider) * adults)).toFixed(1);
   foodData.push(waterAmount);
 
   console.log(foodData);
