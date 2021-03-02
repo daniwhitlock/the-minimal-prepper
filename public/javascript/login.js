@@ -1,6 +1,3 @@
-//const test
-
-
 // const { JSDOM } = require( "jsdom" );
 // const { window} = new JSDOM( "" );
 // const $ = require( "jquery" )( window );
@@ -15,17 +12,17 @@ async function userCreate(event) {
     const overSeven = document.querySelector('#overSeven-data').value.trim();
     const weeksPrep = document.querySelector('#weeksPrep-data').value.trim();
     // const diet = document.querySelector('#diet-data').value.trim();
-    console.log('pass')
-    console.log(username)
-    console.log(email)
-    console.log(password)
-    console.log(underseven)
-    console.log(overSeven)
-    console.log(weeksPrep)
-    // console.log(diet)
+    console.log('pass');
+    console.log(username);
+    console.log(email);
+    console.log(password);
+    console.log(underseven);
+    console.log(overSeven);
+    console.log(weeksPrep);
+    // console.log(diet);
     if (username) {
 
-        console.log(username)
+        console.log(username);
         const response = await fetch('/api/users', {
           method: 'post',
           body: JSON.stringify({
@@ -39,7 +36,7 @@ async function userCreate(event) {
           }),
           headers: { 'Content-Type': 'application/json' }
         });
-        console.log(username)
+        console.log(username);
         // check the response status
         if (response.ok) {
           console.log('success');
@@ -70,7 +67,7 @@ async function userCreate(event) {
     //   }
     // }
 }
-// console.log(document.querySelector('.user-form'))
+// console.log(document.querySelector('.user-form'));
 
 async function loginForm(event) {
   event.preventDefault();
