@@ -24,21 +24,36 @@
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
+</header>
 
-    <div class="container-fluid main-section text-center">
-    
-        <div class="row">
-            <div class="col-3 picutre-col">
-                <!--PROFILE PICTURE-->
-                <div class="card picture-card" style="width: 24rem;">
-                    <img src="Futurama-on-Syfy-700x300.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">
-                            {{loggedInData.username}}
-                        </p>
-                    </div>
+<div class="container imgPadding">
+
+    <div class="row justify-content-between">
+
+        <div class="col-3">
+            <h2>
+                {{loggedInData.username}}
+               
+            </h2>
+          
+            <img src="../images/Futurama-on-Syfy-700x300.jpg" />
+
+            <div class="blogPostBox pantryBoxc center">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
+                    Pantry Generator
+                </button>
+                {{loggedInData.underseven}}
+                {{loggedInData.overSeven}}
+                {{loggedInData.weeksPrep}}
+                {{grainsAmount}}
+                {{legumesAmount}}
+                {{> pantrygenerator}}
+
+                <div class="goal">
+                    {{!-- input amount of months for pantry generator --}}
+                    Goal: <span id="timeGoal"></span>
                 </div>
 
                 <!--PANTRY GENERATOR AND CHECKLISTS-->
