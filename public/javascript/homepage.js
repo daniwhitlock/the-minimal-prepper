@@ -1,1 +1,3 @@
-var myModal = new bootstrap.Modal(document.getElementById('myModal'), options)
+var signupModal = new bootstrap.Modal(document.getElementById('signupModal'), options);
+var loginModal = new bootstrap.Modal(document.getElementById('loginModal'), options);
+

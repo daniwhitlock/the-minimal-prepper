@@ -1,38 +1,29 @@
 <header>
-    <div class="container profileBar">
-
-        <div class="row profileMargin">
-            <div class="col-3">
-                <div class="input-group">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    <div class="container-fluid profileBar">
+        <!--NAVIGATION-->
+        <div class="row">
+            <!--LOGO-->
+            <div class="col-9">
+                <img class="logo" id="logo3" src="/images/small-logo2.png" alt="Responsive image">
+            </div>
+            <!--SEARCH BAR-->
+            <div class="col-2 padding">
+                <div class="input-group w-100 profile-col">
+                    <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
                         aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-primary">search</button>
+                    <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
                 </div>
             </div>
-
-            <div class="col-9">
-                <div class="row">
-
-                    <div class="col">
-                        <button type="button" class="btn btn-outline-primary">Blog/Post</button>
-                    </div>
-
-                    <!-- <div class="col">
-                            <button type="button" class="btn btn-outline-primary">Primary</button>
-                        </div> -->
-
-                    <div class="col-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Account</option>
-                            <option value="1">Update Profile</option>
-                            <option value="2">Log Out</option>
-                        </select>
-                    </div>
-                </div>
+            <!--ACCOUNT SETTINGS-->
+            <div class="col-1 padding">
+                <select class="form-select w-78 profile-col justify-content-end" aria-label="Default select example">
+                    <option selected>Account</option>
+                    <option value="1">Update Profile</option>
+                    <option value="2">Log Out</option>
+                </select>
             </div>
         </div>
     </div>
-
 </header>
 
 <div class="container imgPadding">
@@ -40,203 +31,424 @@
     <div class="row justify-content-between">
 
         <div class="col-3">
+            <h2>
+                {{loggedInData.username}}
+            </h2>
 
-            <img src="../images/Futurama-on-Syfy-700x300.jpg" />
+            <img src="/images/Futurama-on-Syfy-700x300.jpg" />
 
             <div class="blogPostBox pantryBoxc center">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantryModal">
-                    Pantry Generator
-                </button>
-                {{> pantrygenerator}}
 
-                <div class="goal">
-                    Goal: <span id="timeGoal"></span>{{!-- The Length needs to be the number that the partials pantry
-                    generator
-                    selected--}}
+                <!--PANTRY GENERATOR AND CHECKLISTS-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <h5 class="card-header">Pantry Items</h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#pantryModal">
+                                Pantry Generator
+                            </button>
+                            {{> pantrygenerator}}
+                        </p>
+
+                        <div class="goal">
+                            Goal: <span  id="timeGoal"></span>
+                        </div>
+
+                        <table style="width:100%" class="left-white">
+                            <tr>
+                                <th>Item </th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>Grains (lbs)</td>
+                                {{!-- dependent on the # of people and length of time --}}
+                                <td id="grainsAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkGrains"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkGrains">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Legumes/Beans (lbs)</td>
+                                <td id="legumesAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkLegumes"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkLegumes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Milk (lbs)</td>
+                                <td id="milkAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkMilk"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkMilk">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sugars (lbs)</td>
+                                <td id="sugarAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkSugar"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkSugar">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fats/Oils (lbs)</td>
+                                <td id="fatsAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkFats"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkFats">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fruits/Veggies (lbs)</td>
+                                <td id="fruitsVeggiesAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkFruitsVeggies"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salt (lbs)</td>
+                                <td id="saltAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkSalt"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkSalt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Water (gal)</td>
+                                <td id="waterAmount"></td>
+                                <td>
+                                    <label class="custom-control-label" for="checkWater"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkWater">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-                <table style="width:100%" class="left-white">
-                    <tr>
+                <!--PANTRY GENERATOR END-->
 
-                        <th>Item </th>
-                        <th>Amount</th>
-                        <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td>Grains (lbs)</td>
-                        {{!-- dependent on the # of people and length of time --}}
-                        <td id="grainsAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkGrains"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkGrains">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Legumes/Beans (lbs)</td>
-                        <td id="legumesAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkLegumes"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkLegumes">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Milk (lbs)</td>
-                        <td id="milkAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkMilk"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkMilk">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Sugars (lbs)</td>
-                        <td id="sugarAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkSugar"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkSugar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fats/Oils (lbs)</td>
-                        <td id="fatsAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkFats"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkFats">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Fruits/Veggies (lbs)</td>
-                        <td id="fruitsVeggiesAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkFruitsVeggies"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>Salt (lbs)</td>
-                        <td id="saltAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkSalt"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkSalt">
-                        </td>
-                    </tr>
-                      <tr>
-                        <td>Water (gal)</td>
-                        <td id="waterAmount"></td>
-                        <td>
-                            <label class="custom-control-label" for="checkWater"></label>
-                            <input type="checkbox" class="custom-control-input" id="checkWater">
-                        </td>
-                    </tr>
+                <!--72 HOUR KIT-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <h5 class="card-header">72 Hour Kit</h5>
+                    <div class="card-body">
 
-                </table>
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Water (1 G per person / per
+                                day</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        </div>
 
-                
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Food and Utensils</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
 
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">NOAA Weather Alert Radio (Hand
+                                crank/btry powered)</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Blankets/Pillows/
+                                Sleeping Bag</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <p></p>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Flashlight</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Whistle</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Dust or Filter Masks</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <p></p>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <p></p>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Can Opener</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <p></p>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--first col end-->
+
+            <!--ARTICLES / NEWS FEED SECTION-->
+            <div class="col-6 blog-section">
+
+                <!--TABS-->
+                <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
+                    <li class="nav-item" role=" presentation">
+                        <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
+                            type="button" role="tab" aria-controls="article" aria-selected="true">
+                            <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button"
+                            role="tab" aria-controls="feed" aria-selected="false">
+                            <img src="/images/feed.png" id="nav-title" class="img-fluid height: auto;">
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content rounded" id="sectionTabContent">
+                    <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
+
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto"
+                            style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto"
+                            style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto"
+                            style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto"
+                            style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-header">Header</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Title</h5>
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="feed" role="tabpanel" aria-labelledby="feed-tab">
+                        <div class="text-center card-padding card text-dark bg-light mb-3 mx-auto"
+                            style="max-width: 58rem;">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                    <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                    <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                    <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                    <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="text-center card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+                            <div class="card-body">
+                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
+                                    reiciendis corporis laudantium hic
+                                    officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid
+                                    iusto ab, iste
+                                    eligendi consectetur maxime odit.
+                                <div class="btn-group" role="group" aria-label="Basic outlined example">
+                                    <button type="button" class="btn like-btn btn-outline-secondary">Like</button>
+                                    <button type="button" class="btn comment-btn btn-outline-secondary">Comment</button>
+                                </div>
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
 
-            <div class="blogPostBox pantryBox">
-                72 Hour Kit
+            <!--TIPS / ALERTS SECTION-->
+            <div class="col-3 text-center">
+                <!--TIPS-->
+                <div class="tips-section">
+                    <img src="/images/tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
+                    <!--<div class="scrollbar2">!-->
+                    <div class="card mx-auto" style="width: 25rem;">
+                        <div class="card-header">
+                            Featured
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Similique,
+                                incidunt explicabo asperiores corrupti quod eveniet voluptates, obcaecati nostrum
+                                libero,
+                                reiciendis repellendus modi recusandae aperiam dolorem adipisci eligendi fugit.
+                                Voluptates, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Temporibus
+                                corporis, pariatur assumenda porro dignissimos ipsum voluptatem possimus veniam cum
+                                soluta
+                                saepe nemo, facere illum libero reiciendis alias accusamus delectus rem! Lorem ipsum
+                                dolor sit amet
+                                consectetur adipisicing elit. A soluta, tempora, quo iure vero enim cumque voluptates
+                                voluptas
+                                eveniet quis ratione placeat, voluptatibus eos. Nisi inventore quam beatae odit nobis.
+                            </li>
+                            <li class="list-group-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Voluptatum
+                                at ullam laborum fuga nostrum, esse voluptates corporis? Eum quod esse, hic minus modi,
+                                quis
+                                expedita fugiat incidunt blanditiis debitis neque. Lorem ipsum dolor sit amet
+                                consectetur, adipisicing
+                                elit. Exercitationem, ad pariatur veritatis, rerum animi consequatur corporis commodi,
+                                ipsa minima labore
+                                iste earum dolorem beatae officiis sed qui! At, reiciendis earum.</li>
+                            <li class="list-group-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                                beatae
+                                quibusdam sunt quam nesciunt? Facilis architecto laborum, tempora fugiat vel
+                                necessitatibus laudantium
+                                eligendi libero deserunt ratione, illum aspernatur, fuga consequuntur!</li>
+                        </ul>
+                    </div>
+                    <!--</div>!-->
 
-
-                <div class="custom-control custom-checkbox">
-
-                    <label class="custom-control-label" for="customCheck1">Item1</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <!--EMERGENCY ALERTS SECTION-->
+                    <div class="alerts-section">
+                        <img src="/images/newalert.png" id="title3" alt="Responsive image">
+                        <div class="accordion-section">
+                            <div class="accordion" style="width: 25rem;" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Alert 1
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p> ALERT 1 CONTENT </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Alert 2
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p>ALERT 2 CONTENT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Alert 3
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Alert 3 content
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="custom-control custom-checkbox">
-
-                    <label class="custom-control-label" for="customCheck1">Item2</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                </div>
-
-                <div class="custom-control custom-checkbox">
-
-                    <label class="custom-control-label" for="customCheck1">Item3</label>
-                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                </div>
-
+                <!--TIPS / ALERTS SECTION END-->
 
             </div>
-
+            <!--ROW END-->
         </div>
-
-        <div class="col-6">
-
-
-            <div class="blogPostBox blogPostAlign">
-                Blog/Post
-            </div>
-
-            <div class="blogPostBox">
-                <div class="form-group">
-
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-
-                <div class="blogPostSubmit">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-
-            </div>
-            <div class="blogPostBox">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed reiciendis corporis laudantium hic
-                officiis error voluptas deleniti cumque alias assumenda expedita commodi, aliquid iusto ab, iste
-                eligendi consectetur maxime odit.
-            </div>
-
-            <div class="blogPostBox">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                minus maiores.
-            </div>
-
-            <div class="blogPostBox">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                minus maiores.
-            </div>
-
-            <div class="blogPostBox">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                minus maiores.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptas odio reiciendis,
-                consequuntur neque alias commodi doloribus
-                ducimus sequi vero inventore sit eos! Cumque nihil quas assumenda.
-            </div>
-
-            <div class="blogPostBox">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nulla doloribus architecto placeat
-                minus maiores.
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sed similique harum reiciendis qui
-                labore incidunt iusto
-                reprehenderit deserunt soluta. Repudiandae eos atque inventore a eaque amet. Placeat accusantium
-                quam at ratione odit eius
-                veritatis vero, distinctio, exercitationem, nulla aspernatur! Quaerat nesciunt, aspernatur
-                dolores debitis blanditiis
-                ratione id a consequuntur magnam quibusdam, iusto et minus at earum inventore qui magni eius
-                perspiciatis, explicabo esse
-                atque repellat corporis quod! Dolores deserunt laudantium, non saepe soluta architecto ullam
-                eaque eligendi odit iusto rem
-                laboriosam perspiciatis accusamus? Placeat tempora magni iste iusto eius beatae vitae error
-                recusandae quae rerum reprehenderit
-                sed consequatur minus commodi est sequi labore quia blanditiis eveniet non, libero ad atque!
-                Deserunt esse, ducimus nesciunt
-                laborum voluptas dolorem perferendis dolor?
-            </div>
-        </div>
-
-        <div class="col-3">
-            <div class="funnyTipsBox">
-                Funny Tips
-            </div>
-
-            <div class="funnyTipsBox">
-                Friends List
-            </div>
-
-        </div>
-
     </div>
 </div>
-
+<!--MAIN SECTION END-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
@@ -244,4 +456,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
     integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
     crossorigin="anonymous"></script>
-<script src="/javascript/profile.js"></script>
+<script src="/javascript/profile.js"></script>  
