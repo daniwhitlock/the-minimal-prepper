@@ -1,14 +1,10 @@
 // Set up equations
 document.getElementById("pantry-save").addEventListener("click", function(){
 
-
-    // grab values from drop down
+    // grab values from drop down #pantry-save modal
     var numberofKids = document.getElementById("numberofKids").value;
     var numberofAdults = document.getElementById("numberofAdults").value;
     var lengthofTime = document.getElementById("lengthofTime").value;
-
-
-    // callback pantry Calculator
 
     pantryCalculator(numberofKids, numberofAdults, lengthofTime);
 });
@@ -40,6 +36,7 @@ function pantryCalculator (kids, adults, time) {
         default:
             break;
     }
+    document.getElementById("timeGoal").textContent = goal;
     console.log("monthdivider: " + monthdivider);
    
     var grainsAmount =(((400*monthdivider) * (kids *.7)) + ((400*monthdivider) * adults)).toFixed(2);
@@ -51,30 +48,26 @@ function pantryCalculator (kids, adults, time) {
     document.getElementById("legumesAmount").textContent = legumesAmount;
 
     var milkAmount = (((16*monthdivider) * (kids *.7)) + ((16*monthdivider) * adults)).toFixed(2);
-    console.log(milkAmount);
+    // console.log(milkAmount);
     document.getElementById("milkAmount").textContent = milkAmount;
 
     var sugarAmount = (((60*monthdivider) * (kids *.7)) + ((60*monthdivider) * adults)).toFixed(2);
-    console.log(sugarAmount);
+    // console.log(sugarAmount);
     document.getElementById("sugarAmount").textContent = sugarAmount;
 
     var fatsAmount = (((20*monthdivider) * (kids *.7)) + ((20*monthdivider) * adults)).toFixed(2);
-    console.log(fatsAmount);
+    // console.log(fatsAmount);
     document.getElementById("fatsAmount").textContent = fatsAmount;
 
     var fruitsVeggiesAmount = (((90*monthdivider) * (kids *.7)) + ((90*monthdivider) * adults)).toFixed(2);
-    console.log(fruitsVeggiesAmount);
+    // console.log(fruitsVeggiesAmount);
     document.getElementById("fruitsVeggiesAmount").textContent = fruitsVeggiesAmount;
 
     var saltAmount = (((8*monthdivider) * (kids *.7)) + ((8*monthdivider) * adults)).toFixed(2);
-    console.log(fruitsVeggiesAmount);
+    // console.log(saltAmount);
     document.getElementById("saltAmount").textContent = saltAmount;
 
     var waterAmount = (((365*monthdivider) * (kids *.7)) + ((365*monthdivider) * adults)).toFixed(2);
-    console.log(waterAmount);
+    // console.log(waterAmount);
     document.getElementById("waterAmount").textContent = waterAmount;
-
-
-    document.getElementById("timeGoal").textContent = goal;
-
 }
