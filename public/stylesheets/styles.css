@@ -15,7 +15,7 @@ body {
 }
 
 .nav-item {
-    margin: 5px;
+    margin-top: 5px;
     display: flex;
 }
 
@@ -61,10 +61,10 @@ body {
 
 .tips-section {
     margin-top: 100px;
-    margin-right: 20px;
+    
 }
 
-.logo {
+#main-logo {
     margin-bottom: 100px;
 }
 
@@ -79,5 +79,43 @@ body {
 }
 
 #logo2 {
-    height: 100px;
+    max-height: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+   
+}
+
+/* 2.4 - MEDIA QUERIES FOR SMALL SCREENS TO TABLETS */
+@media screen and (max-width: 980px) {
+
+    
+}
+
+/* 2.4 - MEDIA QUERIES FOR TABLETS DOWN TO PHONES */
+@media screen and (max-width: 768px) {
+    
+    #logo2 {
+        max-height: 80px;
+        margin-bottom: 10px;
+    }
+
+    #main-logo {
+        margin-top: 40px;
+        max-height: 250px;
+    }
+}
+
+/* 2.4 - MEDIA QUERIES FOR PHONE */
+@media screen and (max-width: 576px) {
+    
+    
+    #logo2 {
+        max-height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    #main-logo {
+        margin-top: 40px;
+    }
 }
