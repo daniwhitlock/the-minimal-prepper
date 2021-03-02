@@ -5,11 +5,11 @@ const { User } = require('../models');
 router.get('/', (req, res) => {
   console.log(req.session);
 
-  res.render('homepage', { req })
+  res.render('homepage', { req });
 
 });
 
-router.get('/login')
+// router.get('/login');
 
 router.get('/profile', (req, res) => {
   // console.log("--------------------------");
@@ -20,8 +20,8 @@ router.get('/profile', (req, res) => {
       id: req.session.user_id
     }
   }).then(userdata => {
-    const loggedinuser = JSON.stringify(userdata)
-    const loggedInData = JSON.parse(loggedinuser)
+    const loggedinuser = JSON.stringify(userdata);
+    const loggedInData = JSON.parse(loggedinuser);
 
     // console.log('this');
     // console.log(loggedInData);
@@ -105,7 +105,7 @@ function pantryCalculator(kids, adults, time) {
   var waterAmount = (((365 * monthdivider) * (kids * .7)) + ((365 * monthdivider) * adults)).toFixed(2);
   foodData.push(waterAmount);
 
-  console.log(foodData)
+  console.log(foodData);
   return foodData;
 }
 
