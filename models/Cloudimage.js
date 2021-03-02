@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class Cloudimage extends Model {
 
@@ -14,7 +14,7 @@ Cloudimage.init(
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        imagename: {
             type: DataTypes.STRING,
             
         },
@@ -45,25 +45,24 @@ Cloudimage.init(
         // },
 
     },
-    // {
-    //     hooks: {
-    //         // set up beforeCreate lifecycle "hook" functionality
-    //         async beforeCreate(newUserData) {
-    //             newUserData.password = await bcrypt.hash(newUserData.password, 10);
-    //             return newUserData;
-    //         },
+    {
+        // hooks: {
+        //     // set up beforeCreate lifecycle "hook" functionality
+        //     async beforeCreate(newUserData) {
+        //         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        //         return newUserData;
+        //     },
 
-    //         async beforeUpdate(updatedUserData) {
-    //             updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-    //             return updatedUserData;
-    //         }
-    //     },
-    //     sequelize,
-    //     timestamps: false,
-    //     freezeTableName: true,
-    //     underscored: true,
-    //     modelName: 'user'
-    // }
+        //     async beforeUpdate(updatedUserData) {
+        //         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        //         return updatedUserData;
+        //     }
+        // },
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'cloudimage'
+    }
 );
 
 module.exports = Cloudimage;

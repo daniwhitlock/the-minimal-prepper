@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const User = require('../../models/user');
-const cloudinary = require('../../utils/cloudinary')
-const upload = require('../../utils/multer')
+const cloudinary = require('../../utils/cloudinary');
+const upload = require('../../utils/multer');
+const Cloudimage = require('../../models/Cloudimage');
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -88,12 +89,20 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/images', upload.single('imageUser'), async (req, res) => {
-  console.log(upload)
-  console.log(cloudinary)
+ 
   try {
-    console.log(req.file)
+    
     const result = await cloudinary.uploader.upload(req.file.path)
-    res.json(result)
+
+    let cloudimage = new Cloudimage({
+      imagename: req.body.name,
+      avatar: result.secure_url,
+      cloudinary_id: result.public_id,
+    });
+    // console.log(result)
+    // res.json(result)
+    await cloudimage.save();
+    res.json(cloudimage);
   } catch (err) {
     console.log(err)
   }
