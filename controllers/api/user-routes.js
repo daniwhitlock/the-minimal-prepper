@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const User = require('../../models/user');
 const cloudinary = require('../../utils/cloudinary');
 const upload = require('../../utils/multer');
-const Cloudimage = require('../../models/Cloudimage');
+// const Cloudimage = require('../../models/Cloudimage');
 
 router.get('/', (req, res) => {
   User.findAll({
@@ -88,21 +88,44 @@ router.post('/login', (req, res) => {
   });
 });
 
-router.post('/images', upload.single('imageUser'), async (req, res) => {
- 
+//image user comes from front end.
+router.put('/images', upload.single('imageUser'), async (req, res) => {
+ console.log(User)
+
+
+//  User.findOne({
+//   where: {
+//     id: req.session.user_id
+//   }
+
   try {
+
+    // User.findOne({
+    //   where: {
+    //     id: req.session.user_id
+    //   }
+    // })
     
     const result = await cloudinary.uploader.upload(req.file.path)
-
-    let cloudimage = new Cloudimage({
+console.log(req.session)
+    User.update({
       imagename: req.body.name,
       avatar: result.secure_url,
       cloudinary_id: result.public_id,
-    });
+
+      where: {
+      id: req.session.user_id
+      }
+    })
+    // let cloudimage = new Cloudimage({
+    //   imagename: req.body.name,
+    //   avatar: result.secure_url,
+    //   cloudinary_id: result.public_id,
+    // });
     // console.log(result)
     // res.json(result)
-    await cloudimage.save();
-    res.json(cloudimage);
+    // await User.save();
+    // res.json(User);
   } catch (err) {
     console.log(err)
   }
