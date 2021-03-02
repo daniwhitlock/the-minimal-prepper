@@ -88,8 +88,10 @@ router.post('/login', (req, res) => {
 });
 
 router.post('/images', upload.single('imageUser'), async (req, res) => {
-  console.log(req.file)
+  console.log(upload)
+  console.log(cloudinary)
   try {
+    console.log(req.file)
     const result = await cloudinary.uploader.upload(req.file.path)
     res.json(result)
   } catch (err) {

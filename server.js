@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('./controllers/'));
 
 // app.use('/static', express.static('public'))
-app.use
+app.use(express.static(path.join(__dirname, 'utils')));
 // app.use('/boot', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 
 
