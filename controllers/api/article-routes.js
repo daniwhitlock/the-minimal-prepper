@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Articles } = require('../../models');
+const Articles = require('../../models/Articles');
 
 router.get('/', (req, res) => {
   Articles.findAll({
@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
           'header',
           'title',
           'article_url',
-          'article_text',
-          [sequelize.literal('SELECT * FROM articles')]
+          'article_text'
+          // [sequelize.literal('SELECT * FROM articles')]
       ]
   })
     .then(dbArticlesData => res.json(dbArticlesData))

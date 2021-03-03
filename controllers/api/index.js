@@ -6,7 +6,7 @@ const articleRoutes = require('./article-routes.js');
 // const commentRoutes = require('./comment-routes');
 
 router.use('/users', userRoutes);
-router.use('./articles', articleRoutes);
+router.use('/articles', articleRoutes);
 // router.use('/posts', postRoutes);
 // router.use('/comments', commentRoutes);
 
