@@ -16,11 +16,7 @@
             </div>
             <!--ACCOUNT SETTINGS-->
             <div class="col-1 padding">
-                <select class="form-select w-78 profile-col justify-content-end" aria-label="Default select example">
-                    <option selected>Account</option>
-                    <option value="1">Update Profile</option>
-                    <option value="2">Log Out</option>
-                </select>
+                <button type="button" class="btn btn-outline-light">Logout</button>
             </div>
         </div>
     </div>
@@ -39,6 +35,122 @@
                         {{loggedInData.username}}
                     </h2>
 
+                </div>
+            </div>
+
+                  
+
+                <!--PANTRY GENERATOR AND CHECKLISTS-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <div class="card-header">
+                        <button type="button" class="btn btn-default" data-bs-toggle="modal"
+                                data-bs-target="#pantryModal">
+                                Pantry Generator
+                            </button>
+                            {{> pantrygenerator}}
+                    </div>
+
+
+                    <div class="card-body">
+                        
+
+                        <div class="goal">
+                            Goal: <span  id="timeGoal">{{goal1}}</span>
+                        </div>
+
+                        <table style="width:100%" class="left-white">
+                            <tr>
+                                <th>Item </th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>Grains (lbs)</td>
+                                {{!-- dependent on the # of people and length of time --}}
+                                <td id="grainsAmount">{{grainsAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkGrains"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkGrains">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Legumes/Beans (lbs)</td>
+                                <td id="legumesAmount">{{legumesAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkLegumes"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkLegumes">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Milk (lbs)</td>
+                                <td id="milkAmount">{{milkAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkMilk"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkMilk">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sugars (lbs)</td>
+                                <td id="sugarAmount">{{sugarAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkSugar"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkSugar">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fats/Oils (lbs)</td>
+                                <td id="fatsAmount">{{fatsAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkFats"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkFats">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fruits/Veggies (lbs)</td>
+                                <td id="fruitsVeggiesAmount">{{fruitsVeggiesAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkFruitsVeggies"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Salt (lbs)</td>
+                                <td id="saltAmount">{{saltAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkSalt"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkSalt">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Water (gal)</td>
+                                <td id="waterAmount">{{waterAmount1}}</td>
+                                <td>
+                                    <label class="custom-control-label" for="checkWater"></label>
+                                    <input type="checkbox" class="custom-control-input" id="checkWater">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--PANTRY GENERATOR END-->
+
+                <!--72 HOUR KIT-->
+                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                    <div class="card-header text-center">
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                data-bs-target="#kitModal">
+                                72 Hour Kit Checklist
+                            </button>
+                            {{> kit}}
+
+                    </div>
+                    <div class="card-body text-center">
+                        <p>It's recommended to have one kit prepared for each member of your family. Each kit should
+                            meet each individual's personal needs.
+                        </p>
+                        
+                        
+                    </div>
                 </div>
             </div>
 
