@@ -1,5 +1,5 @@
 <header>
-    <div class="container-fluid profileBar">
+    <div class="container-fluid profileBar2">
         <!--NAVIGATION-->
         <div class="row">
             <!--LOGO-->
@@ -26,18 +26,21 @@
     </div>
 </header>
 
-<div class="container imgPadding">
+<div class="container-fluid main-section text-center">
 
-    <div class="row justify-content-between">
-
-        <div class="col-3">
+    <div class="row">
+        <div class="col-3 picutre-col">
+        <div class="card picture-card" style="width: 24rem;">
+            <img src="/images/Futurama-on-Syfy-700x300.jpg" />
+            <div class="card-body">
+        
             <h2>
                 {{loggedInData.username}}
             </h2>
+        
+            
 
-            <img src="/images/Futurama-on-Syfy-700x300.jpg" />
-
-            <div class="blogPostBox pantryBoxc center">
+           
 
                 <!--PANTRY GENERATOR AND CHECKLISTS-->
                 <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
@@ -133,72 +136,27 @@
 
                 <!--72 HOUR KIT-->
                 <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
-                    <h5 class="card-header">72 Hour Kit</h5>
-                    <div class="card-body">
+                    <div class="card-header text-center">
+                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
+                                data-bs-target="#kitModal">
+                                72 Hour Kit Checklist
+                            </button>
+                            {{> kit}}
 
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Water (1 G per person / per
-                                day</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Food and Utensils</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">NOAA Weather Alert Radio (Hand
-                                crank/btry powered)</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Blankets/Pillows/
-                                Sleeping Bag</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <p></p>
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Flashlight</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Whistle</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        </div>
-
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Dust or Filter Masks</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <p></p>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <p></p>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Can Opener</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <p></p>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <label class="custom-control-label" for="customCheck1">Moist Towelettes (Sanitation)</label>
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <p></p>
-                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p>It's recommended to have one kit prepared for each member of your family. Each kit should
+                            meet each individual's personal needs.
+                        </p>
+                        
+                        
                     </div>
                 </div>
             </div>
             <!--first col end-->
 
             <!--ARTICLES / NEWS FEED SECTION-->
-            <div class="col-6 blog-section">
+            <div class="col-6 blog-section2">
 
                 <!--TABS-->
                 <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
@@ -347,8 +305,8 @@
             <div class="col-3 text-center">
                 <!--TIPS-->
                 <div class="tips-section">
-                    <img src="/images/tips2.png" id="title1" class="img-fluid height: auto;" alt="Responsive image">
-                    <!--<div class="scrollbar2">!-->
+                    <img src="/images/tips2.png" id="title-profile" class="img-fluid height: auto;" alt="Responsive image">
+                    <!--<div class="scrollbar3">!-->
                     <div class="card mx-auto" style="width: 25rem;">
                         <div class="card-header">
                             Featured
