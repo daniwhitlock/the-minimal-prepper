@@ -27,8 +27,13 @@
     <div class="row">
         <div class="col-3 picture-col">
             <div class="card picture-card" style="width: 24rem;">
-                <img src="/images/Futurama-on-Syfy-700x300.jpg" />
+                {{!-- <img src="/images/Futurama-on-Syfy-700x300.jpg" /> --}}
+              
+                {{#if loggedInData.avatar}}
+                    <img src="{{loggedInData.avatar}}"/>
+                    {{else}}
                 {{> imageupload}}
+                {{/if}}
                 <div class="card-body">
 
                     <h2>
