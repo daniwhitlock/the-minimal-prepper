@@ -50,6 +50,20 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        imagename: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            
+        },
+        avatar: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        cloudinary_id: {
+            type: DataTypes.STRING,
+            allowNull: true,
+           
+        },
         // diet: {
         //     type: DataTypes.STRING,
         //     allowNull: false,
