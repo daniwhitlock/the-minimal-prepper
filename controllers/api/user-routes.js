@@ -83,7 +83,7 @@ router.post('/login', (req, res) => {
 
       console.log(dbUserData);
 
-      // res.json({ user: dbUserData, message: 'You are now logged in!'});
+       res.json({ user: dbUserData, message: 'You are now logged in!'});
     });
   });
 });
