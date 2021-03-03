@@ -4,7 +4,7 @@ async function uploadImage(event) {
     const imageInfo = document.getElementById("imageInfo")
    
     console.log(new FormData(imageData))
-
+    
     let response = await fetch('/api/users/images', {
         method: 'PUT',
         body: new FormData(imageData)
