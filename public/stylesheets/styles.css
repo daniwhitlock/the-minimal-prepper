@@ -14,13 +14,30 @@ body {
     background-color: var(--blue-color);
 }
 
+.profileBar2 {
+    background-image: linear-gradient( #8bb69b 20%, #2C518F);
+    height: 200px;
+}
+
 .nav-item {
-    margin: 5px;
+    margin-top: 5px;
     display: flex;
+}
+
+#nav-title {
+    height: 40px;
 }
 
 .signup-card {
     margin: auto;
+}
+
+#title3 {
+    height: 80px;
+}
+
+.card-padding {
+    margin-top: 20px;
 }
 
 .extended {
@@ -33,7 +50,11 @@ body {
 }
 
 .main-section {
-    background-color: var(--green-color);
+    background-color: var(--blue-color);
+}
+
+.main-section2 {
+    background-image: linear-gradient(#2C518F 30%, #6c9f7f);
 }
 
 .blog-section {
@@ -42,6 +63,11 @@ body {
 
 .scrollbar, .scrollbar2 {
     height: 550px;
+    overflow-y: scroll;
+}
+
+.scrollbar3 {
+    height: 450px;
     overflow-y: scroll;
 }
 
@@ -61,10 +87,15 @@ body {
 
 .tips-section {
     margin-top: 100px;
-    margin-right: 20px;
+    
 }
 
-.logo {
+#logo3 {
+    height: 100px;
+    margin-top:2px;
+}
+
+#main-logo {
     margin-bottom: 100px;
 }
 
@@ -78,6 +109,37 @@ body {
     margin-bottom: 20px;
 }
 
-#logo2 {
-    height: 100px;
+#title-profile {
+    height: 70px;
+    margin-bottom: 20px;
 }
+
+
+#logo2 {
+    max-height: 100px;
+}
+
+.padding {
+    padding: 5px;
+}
+
+.alerts-section {
+    margin-top: 20px;
+}
+
+.blog-section2 {
+    background-color:transparent;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.picture-card {
+    margin-bottom: 15px;
+}
+
+.tab-content {
+    background-color: transparent;
+}
+
