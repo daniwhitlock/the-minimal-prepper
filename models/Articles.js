@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Articles extends Model {}
@@ -27,9 +27,9 @@ Articles.init(
             }
           },
           article_text: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
-        },
+          },
     },
     {
         sequelize,
