@@ -32,6 +32,7 @@
         
             <h2>
                 {{loggedInData.username}}
+
             </h2>
         
             </div>
@@ -42,22 +43,16 @@
                 <!--PANTRY GENERATOR AND CHECKLISTS-->
                 <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
                     <div class="card-header">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-default" data-bs-toggle="modal"
                                 data-bs-target="#pantryModal">
                                 Pantry Generator
                             </button>
                             {{> pantrygenerator}}
-                        
-                    
                     </div>
 
 
-
-
                     <div class="card-body">
-                        <p class="card-text">
-                            
-                        </p>
+                        
 
                         <div class="goal">
                             Goal: <span  id="timeGoal">{{goal1}}</span>
