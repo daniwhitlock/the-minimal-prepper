@@ -31,6 +31,11 @@
               
                 {{#if loggedInData.avatar}}
                     <img src="{{loggedInData.avatar}}"/>
+                    <button type="button" class="btn btn-default" data-bs-toggle="modal"
+                                data-bs-target="#imageUpdate">
+                                Update Image
+                            </button>
+                    {{> imageupdate}}
                     {{else}}
                 {{> imageupload}}
                 {{/if}}
