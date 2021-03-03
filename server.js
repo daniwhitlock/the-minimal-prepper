@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const dotenv = require('dotenv').config();
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,10 +22,17 @@ const sess = {
   
 app.use(session(sess));
 
-//const hbs = exphbs.create({ helpers });
-//app.engine('handlebars', hbs.engine);
-//app.set('view engine', 'handlebars');
-//app.use(require('./controllers/'));
+const hbs = exphbs.create({});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./controllers/'));
+// app.use('/static', express.static('public'))
+
+// app.use('/boot', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
+
 
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
