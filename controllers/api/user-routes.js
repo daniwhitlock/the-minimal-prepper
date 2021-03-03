@@ -90,7 +90,8 @@ router.post('/login', (req, res) => {
 
 //image user comes from front end.
 router.put('/images', upload.single('imageUser'), async (req, res) => {
- console.log(User)
+ console.log(req.file)
+  console.log(User)
 
 
 //  User.findOne({
@@ -107,15 +108,22 @@ router.put('/images', upload.single('imageUser'), async (req, res) => {
     // })
     
     const result = await cloudinary.uploader.upload(req.file.path)
+    console.log('here')
+    console.log('imageUser')
+    console.log('here')
 console.log(req.session)
+console.log(req.file.originalname)
+console.log(result)
     User.update({
-      imagename: req.body.name,
+      imagename: req.file.originalname,
       avatar: result.secure_url,
       cloudinary_id: result.public_id,
-
+    },{
       where: {
       id: req.session.user_id
       }
+    }).then(answer => {
+      res.json(answer)
     })
     // let cloudimage = new Cloudimage({
     //   imagename: req.body.name,
@@ -124,7 +132,7 @@ console.log(req.session)
     // });
     // console.log(result)
     // res.json(result)
-    // await User.save();
+    // User.save();
     // res.json(User);
   } catch (err) {
     console.log(err)
