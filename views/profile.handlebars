@@ -25,273 +25,198 @@
         </div>
     </div>
 </header>
- 
+
 <div class="container-fluid main-section text-center">
- 
+
     <div class="row">
-        <div class="col-3 picutre-col">
+        <div class="col-3 picture-col">
             <div class="card picture-card" style="width: 24rem;">
                 <img src="/images/Futurama-on-Syfy-700x300.jpg" />
                 {{> imageupload}}
-            <div class="card-body">
-                
-            <h2>
-                {{loggedInData.username}}
-            </h2>
-        
-            </div>
-            </div>
- 
-           
- 
-                <!--PANTRY GENERATOR AND CHECKLISTS-->
-                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
-                    <h5 class="card-header">Pantry Items</h5>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#pantryModal">
-                                Pantry Generator
-                            </button>
-                            {{> pantrygenerator}}
-                        </p>
- 
-                        <div class="goal">
-                            Goal: <span  id="timeGoal">{{goal1}}</span>
-                        </div>
- 
-                        <table style="width:100%" class="left-white">
-                            <tr>
-                                <th>Item </th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                            </tr>
-                            <tr>
-                                <td>Grains (lbs)</td>
-                                {{!-- dependent on the # of people and length of time --}}
-                                <td id="grainsAmount">{{grainsAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkGrains"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkGrains">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Legumes/Beans (lbs)</td>
-                                <td id="legumesAmount">{{legumesAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkLegumes"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkLegumes">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Milk (lbs)</td>
-                                <td id="milkAmount">{{milkAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkMilk"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkMilk">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sugars (lbs)</td>
-                                <td id="sugarAmount">{{sugarAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkSugar"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkSugar">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Fats/Oils (lbs)</td>
-                                <td id="fatsAmount">{{fatsAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkFats"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkFats">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Fruits/Veggies (lbs)</td>
-                                <td id="fruitsVeggiesAmount">{{fruitsVeggiesAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkFruitsVeggies"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Salt (lbs)</td>
-                                <td id="saltAmount">{{saltAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkSalt"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkSalt">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Water (gal)</td>
-                                <td id="waterAmount">{{waterAmount1}}</td>
-                                <td>
-                                    <label class="custom-control-label" for="checkWater"></label>
-                                    <input type="checkbox" class="custom-control-input" id="checkWater">
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <!--PANTRY GENERATOR END-->
- 
-                <!--72 HOUR KIT-->
-                <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
-                    <div class="card-header text-center">
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                data-bs-target="#kitModal">
-                                72 Hour Kit Checklist
-                            </button>
-                            {{> kit}}
- 
-                    </div>
-                    <div class="card-body text-center">
-                        <p>It's recommended to have one kit prepared for each member of your family. Each kit should
-                            meet each individual's personal needs.
-                        </p>                      
-                    </div>
+                <div class="card-body">
+
+                    <h2>
+                        {{loggedInData.username}}
+                    </h2>
+
                 </div>
             </div>
-            <!--first col end-->
- 
-            <!--ARTICLES / NEWS FEED SECTION-->
-            <div class="col-6 blog-section2">
- 
-                <!--TABS-->
-                <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
-                    <li class="nav-item" role=" presentation">
-                        <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
-                            type="button" role="tab" aria-controls="article" aria-selected="true">
-                            <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+
+            <!--PANTRY GENERATOR AND CHECKLISTS-->
+            <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                <h5 class="card-header">Pantry Items</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#pantryModal">
+                            Pantry Generator
                         </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button"
-                            role="tab" aria-controls="feed" aria-selected="false">
-                            <img src="/images/feed.png" id="nav-title" class="img-fluid height: auto;">
-                        </button>
-                    </li>
-                </ul>
- 
-                <div class="tab-content rounded" id="sectionTabContent">
-                    <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
- 
-                    {{> articles}}
+                        {{> pantrygenerator}}
+                    </p>
+
+                    <div class="goal">
+                        Goal: <span id="timeGoal">{{goal1}}</span>
                     </div>
+
+                    <table style="width:100%" class="left-white">
+                        <tr>
+                            <th>Item </th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>Grains (lbs)</td>
+                            {{!-- dependent on the # of people and length of time --}}
+                            <td id="grainsAmount">{{grainsAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkGrains"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkGrains">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Legumes/Beans (lbs)</td>
+                            <td id="legumesAmount">{{legumesAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkLegumes"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkLegumes">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Milk (lbs)</td>
+                            <td id="milkAmount">{{milkAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkMilk"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkMilk">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sugars (lbs)</td>
+                            <td id="sugarAmount">{{sugarAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkSugar"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkSugar">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fats/Oils (lbs)</td>
+                            <td id="fatsAmount">{{fatsAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkFats"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkFats">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fruits/Veggies (lbs)</td>
+                            <td id="fruitsVeggiesAmount">{{fruitsVeggiesAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkFruitsVeggies"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salt (lbs)</td>
+                            <td id="saltAmount">{{saltAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkSalt"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkSalt">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water (gal)</td>
+                            <td id="waterAmount">{{waterAmount1}}</td>
+                            <td>
+                                <label class="custom-control-label" for="checkWater"></label>
+                                <input type="checkbox" class="custom-control-input" id="checkWater">
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
- 
-            <!--TIPS / ALERTS SECTION-->
-            <div class="col-3 text-center">
-                <!--TIPS-->
-                <div class="tips-section">
-                    <img src="/images/tips2.png" id="title-profile" class="img-fluid height: auto;" alt="Responsive image">
-                    <!--<div class="scrollbar3">!-->
-                    <div class="card mx-auto" style="width: 25rem;">
-                        <div class="card-header">
-                            Featured
-                        </div>
-                        {{!-- create a for loop to have each list item have the same formatting? --}}
-                        <ul class="list-group list-group-flush">
-                             <li class="list-group-item">
-                                No food left in the stores? No worries. 
-                                Insects have got you covered! 
-                                Did you know that insects are packed full of protein, good fats, vitamins, minerals, and other benficial nutrition! 
-                                Want more info? <a href = "https://www.edibleinsects.com/insect-nutrition-information/" target = "_blank">Click here!</a>
-                            </li>
-                            <li class="list-group-item">
-                                The average adult uses 1-2 rolls of toilet paper per week.
-                                That is 52-104 rolls per year! 
-                            </li>
-                            <li class="list-group-item">
-                                Your preppers pantry should basically be what you eat in a year, just more thought out and made to last.
-                                If you don't eat it, don't buy it! 
-                            </li>
-                            <li class="list-group-item">
-                                Clean water is essential! Bleach is a useful tool to help purify water. Remember to pay attention to the percentage of bleach (6% or 8.25%) and the ratio of water to bleach.
-                                Example: 1 gallon of water to 1/8 tsp = 8 drops of 6% bleach. 
-                                For more details checkout the United States EPA website<a href = "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water" target="_blank">Click here!</a>
-                            </li>
-                            <li class="list-group-item">
-                                First aid is a must when planning for the unexpected. Hint: It's more than just band-aids but that is a great start!
-                                Checkout out the Red Cross' website for items to have in your basic first aid kit<a href = "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/anatomy-of-a-first-aid-kit.html" target="_blank">Click here!</a>
-                            </li>
- 
-                        </ul>
-                    </div>
-                    <!--</div>!-->
- 
-                    <!--EMERGENCY ALERTS SECTION-->
-                    <div class="alerts-section">
-                        <img src="/images/newalert.png" id="title3" alt="Responsive image">
-                        <div class="accordion-section">
-                            <div class="accordion" style="width: 25rem;" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                            Alert 1
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p> ALERT 1 CONTENT </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                            Alert 2
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <p>ALERT 2 CONTENT</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                            aria-expanded="false" aria-controls="collapseThree">
-                                            Alert 3
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            Alert 3 content
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!--PANTRY GENERATOR END-->
+
+            <!--72 HOUR KIT-->
+            <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+                <div class="card-header text-center">
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#kitModal">
+                        72 Hour Kit Checklist
+                    </button>
+                    {{> kit}}
+
                 </div>
-                <!--TIPS / ALERTS SECTION END-->
- 
+
+
             </div>
-            <!--ROW END-->
+        </div>
+        <!--PANTRY GENERATOR END-->
+
+        <!--72 HOUR KIT-->
+        <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
+            <div class="card-header text-center">
+                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#kitModal">
+                    72 Hour Kit Checklist
+                </button>
+                {{> kit}}
+
+            </div>
+            <div class="card-body text-center">
+                <p>It's recommended to have one kit prepared for each member of your family. Each kit should
+                    meet each individual's personal needs.
+                </p>
+            </div>
         </div>
     </div>
+    <!--first col end-->
+
+    <!--ARTICLES / NEWS FEED SECTION-->
+    <div class="col-6 blog-section2">
+
+        <!--TABS-->
+        <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
+            <li class="nav-item" role=" presentation">
+                <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
+                    type="button" role="tab" aria-controls="article" aria-selected="true">
+                    <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button"
+                    role="tab" aria-controls="feed" aria-selected="false">
+                    <img src="/images/feed.png" id="nav-title" class="img-fluid height: auto;">
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content rounded" id="sectionTabContent">
+            <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
+
+                {{> articles}}
+            </div>
+        </div>
+    </div>
+
+    <!--TIPS SECTION-->
+    <div class="col-3 text-center">
+        <!--TIPS-->
+        <div class="tips-section">
+            <img src="/images/tips2.png" id="title-profile" class="img-fluid height: auto;" alt="Responsive image">
+            <!--<div class="scrollbar3">!-->
+            <div class="card mx-auto" style="width: 25rem;">
+                <div class="card-header">
+                    Featured
+                </div>
+                {{> helpfultips}}
+            </div>
+        </div>
+    </div>
+    <!--TIPS / ALERTS SECTION END-->
 </div>
-<!--MAIN SECTION END-->
- 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
     integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
     crossorigin="anonymous"></script>
-<script>"/javascript/image.js"</script>
-<script src="/javascript/profile.js"></script>  
- 
-
+<script src="/javascript/image.js"></script>
+<script src="/javascript/profile.js"></script>
