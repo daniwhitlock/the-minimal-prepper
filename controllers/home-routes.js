@@ -41,6 +41,26 @@ router.get('/profile', (req, res) => {
     const loggedinuser = JSON.stringify(userdata);
     const loggedInData = JSON.parse(loggedinuser);
 
+    Articles.findAll({
+      attributes: [
+          'id',
+          'header',
+          'title',
+          'article_url',
+          'article_text'
+          // [sequelize.literal('SELECT * FROM articles')]
+      ]
+    })
+    .then(dbArticlesData => {
+      const articles = dbArticlesData.map(article => article.get({ plain: true }));
+
+      res.render('profile', { articles });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+
     // console.log('this');
     // console.log(loggedInData);
     // console.log('this');
