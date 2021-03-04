@@ -1,3 +1,5 @@
+const router = require("../../controllers/api/user-routes");
+
 // Set up equations
 document.getElementById("pantry-save").addEventListener("click", function(){
 
@@ -5,6 +7,10 @@ document.getElementById("pantry-save").addEventListener("click", function(){
     var numberofKids = document.getElementById("numberofKids").value;
     var numberofAdults = document.getElementById("numberofAdults").value;
     var lengthofTime = document.getElementById("lengthofTime").value;
+
+    // create a fetch route with a put route, has an update route, then call the get route
+    router.
+
 
     pantryCalculator(numberofKids, numberofAdults, lengthofTime);
 });

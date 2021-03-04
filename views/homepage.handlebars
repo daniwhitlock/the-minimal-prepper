@@ -41,6 +41,21 @@
                         Get Started
                     </button>
                     {{> getstarted}}
+
+                    {{!-- This is hidden, only will pop up  after you lick continue on the sign-up --}}
+                    <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 5">
+                        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img src="..." class="rounded me-2" alt="...">
+                                <strong class="me-auto">The Minimal Prepper</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                Thank you for signing up! Please login.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

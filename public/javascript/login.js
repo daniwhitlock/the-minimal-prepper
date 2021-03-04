@@ -2,8 +2,14 @@
 // const { window} = new JSDOM( "" );
 // const $ = require( "jquery" )( window );
 
+var signupToast = document.getElementById('liveToast');
+
 async function userCreate(event) {
     event.preventDefault();
+
+    signupToast.classList.remove("hide");
+
+   
 
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-data').value.trim();
@@ -40,6 +46,7 @@ async function userCreate(event) {
         // check the response status
         if (response.ok) {
           console.log('success');
+          alert("Thank you for signing up. Please log in. ");
         } else {
             console.log('dang')
           alert(response.statusText);
@@ -92,6 +99,15 @@ async function loginForm(event) {
       }
   }
 }
+
+
+
+
+
+
+
+
+
 
 document.querySelector('.user-form').addEventListener('submit', userCreate);
 document.querySelector('.user-login').addEventListener('submit', loginForm);
