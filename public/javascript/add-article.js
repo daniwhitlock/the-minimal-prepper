@@ -1,14 +1,17 @@
-// async function newFormHandler(event) {
-//     event.preventDefault();
+// async function newArticleHandler() {
+//     // event.preventDefault();
+//     console.log("I'm here");
   
-//     const title = document.querySelector('input[name="post-title"]').value;
-//     const post_url = document.querySelector('input[name="post-url"]').value;
+//     // const title = document.querySelector('input[name="articles.title"]').value;
+//     // const post_url = document.querySelector('input[name="post-url"]').value;
   
-//     const response = await fetch(`/api/posts`, {
-//       method: 'POST',
+//     const response = await fetch(`/api/articles`, {
+//       method: 'GET',
 //       body: JSON.stringify({
+//         header,
 //         title,
-//         post_url
+//         article_url,
+//         article_text
 //       }),
 //       headers: {
 //         'Content-Type': 'application/json'
@@ -16,8 +19,12 @@
 //     });
   
 //     if (response.ok) {
-//       document.location.replace('/dashboard');
+//     //   document.location.replace('/');
+//         console.log("made it");
 //     } else {
 //       alert(response.statusText);
+//       console.log("didn't make it");
 //     }
 // }
+
+// newArticleHandler();
