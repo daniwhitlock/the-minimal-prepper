@@ -1,12 +1,30 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User } = require('../models');
+const Articles = require('../models/Articles');
 
 router.get('/', (req, res) => {
   console.log(req.session);
 
-  res.render('homepage', { req });
+    Articles.findAll({
+        attributes: [
+            'id',
+            'header',
+            'title',
+            'article_url',
+            'article_text'
+            // [sequelize.literal('SELECT * FROM articles')]
+        ]
+    })
+      .then(dbArticlesData => {
+        const articles = dbArticlesData.map(article => article.get({ plain: true }));
 
+        res.render('homepage', { articles });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // router.get('/login');
