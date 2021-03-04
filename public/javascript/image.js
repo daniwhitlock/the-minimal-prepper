@@ -10,6 +10,7 @@ async function uploadImage(event) {
         body: new FormData(imageData)
       });
 
+      location.reload();
       console.log(response)
 
     // const response = await fetch('api/users/images', {
