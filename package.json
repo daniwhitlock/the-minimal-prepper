@@ -1,0 +1,42 @@
+{
+  "name": "the-minimal-prepper",
+  "version": "1.0.0",
+  "description": "npm packages used\r npm init -y \r npm install express sequelize mysql2\r npm i bcrypt\r npm i dotenv\r npm install express-handlebars\r npm i express-session connect-session-sequelize\r npm install --save-dev nodemon (use this to not have to ctrl + C then restart database when making a change)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniwhitlock/the-minimal-prepper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniwhitlock/the-minimal-prepper/issues"
+  },
+  "homepage": "https://github.com/daniwhitlock/the-minimal-prepper#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.0",
+    "cloudinary": "^1.25.0",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "path": "^0.12.7",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
