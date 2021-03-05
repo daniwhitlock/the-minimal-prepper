@@ -1,3 +1,13 @@
+const errorFunction = function() {
+  console.log('yay')
+  const invalidEmail = document.querySelector('#email-data');
+  invalidEmail.value = 'Please enter a valid email!'
+  invalidEmail.style.color = "red";
+}
+// const errorFunction = function(){
+//     console.log('yay')
+// }
+
 async function userCreate(event) {
   event.preventDefault();
 
@@ -37,8 +47,8 @@ async function userCreate(event) {
     if (response.ok) {
       location.reload();
     } else {
-      console.log('dang')
-      alert(response.statusText);
+     console.log()
+      errorFunction();
     }
   }
 
