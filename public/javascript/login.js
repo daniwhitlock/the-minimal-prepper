@@ -1,9 +1,33 @@
+const resetBox = function() {
+  document.querySelector('.user-form').removeEventListener('click', resetBox);
+  const invalidEmail = document.querySelector('#email-data');
+  const invalidPassword = document.querySelector('#password-data');
+  console.log(invalidPassword)
+  invalidEmail.value = '';
+  invalidEmail.style.color = "black";
+  invalidPassword.value = ''
+  invalidPassword.style.color = "black";
+  invalidPassword.type = 'password'
+
+}
+
 const errorFunction = function() {
   console.log('yay')
   const invalidEmail = document.querySelector('#email-data');
-  invalidEmail.value = 'Please enter a valid email!'
+  invalidEmail.value = 'Invalid Email or Password!';
   invalidEmail.style.color = "red";
+  
+  const invalidPassword = document.querySelector('#password-data');
+  invalidPassword.value = 'Password must be at lease 4 characters long!'
+  invalidPassword.style.color = "red";
+  invalidPassword.type = "";
+
+  const errorForm = document.querySelector('.user-form')
+  errorForm.addEventListener('click', resetBox);
+  
 }
+
+
 // const errorFunction = function(){
 //     console.log('yay')
 // }
@@ -47,7 +71,8 @@ async function userCreate(event) {
     if (response.ok) {
       location.reload();
     } else {
-     console.log()
+     console.log(response)
+    //  alert(response.statusText);
       errorFunction();
     }
   }
