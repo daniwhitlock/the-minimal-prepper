@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+:root {
+    --green-color: #6c9f7f;
+    --blue-color: #2C518F;
+    --second-green: #8bb69b;
+}
+
+.profileBar {
+    background-image: linear-gradient( #8bb69b 20%, #2C518F);
+    height: 200px;
+}
+
+.main-section {
+    background-image: linear-gradient(#2C518F 30%, #6c9f7f);
+}
+
+.scrollbar2 {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.scrollbar3 {
+    
+    background-color: transparent;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--second-green);
+    border-radius: 20px;
+}    
+
+::-webkit-scrollbar-track {
+    background-color: var(--green-color);
+}
+
+#title1 {
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+#nav-title {
+    height: 40px;
+}
+
+#title2 {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+#title3 {
+    height: 80px;
+}
+
+#logo3 {
+    height: 100px;
+    margin-top:2px;
+}
+
+.picture-card {
+    margin-bottom: 15px;
+}
+
+.tab-content {
+    background-color: transparent;
+}
+
+.blog-section {
+    background-color:transparent;
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.card-padding {
+    margin-top: 20px;
+}
+
+.alerts-section {
+    margin-top: 20px;
+}
+
+.alerts-section {
+   align-content: right;
+}
+
+
+.padding {
+    padding: 5px;
+}
+
+
+
+
+
+.center {
+    text-align: center;
+}
+
+.custom-element {
+    color: color-yiq(#000); 
+}
+
+.modal {
+    color: black;
+}
