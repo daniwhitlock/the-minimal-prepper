@@ -130,9 +130,18 @@ body {
 .blog-section2 {
     background-color:transparent;
     border-radius: 8px;
-    border: 1px solid white;
+    border:  transparent;
     padding: 2px;
     margin-bottom: 10px;
+}
+
+#article-tab, #feed-tab {
+    background-color: transparent;
+
+}
+
+.nav-tabs {
+    border-bottom: transparent;
 }
 
 .picture-card {
@@ -141,5 +150,16 @@ body {
 
 .tab-content {
     background-color: transparent;
+}
+
+.small-italic {
+    font-size: smaller;
+    /* font-style: italic; */
+    color:var(--green-color);
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
 }
 

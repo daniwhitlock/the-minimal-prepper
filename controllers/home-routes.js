@@ -1,12 +1,30 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User } = require('../models');
+const Articles = require('../models/Articles');
 
 router.get('/', (req, res) => {
   console.log(req.session);
 
-  res.render('homepage', { req });
+    Articles.findAll({
+        attributes: [
+            'id',
+            'header',
+            'title',
+            'article_url',
+            'article_text'
+            // [sequelize.literal('SELECT * FROM articles')]
+        ]
+    })
+      .then(dbArticlesData => {
+        const articles = dbArticlesData.map(article => article.get({ plain: true }));
 
+        res.render('homepage', { articles });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
 });
 
 // router.get('/login');
@@ -42,13 +60,32 @@ router.get('/profile', (req, res) => {
     saltAmount1 = obj[7];
     waterAmount1 = obj[8];
 
-    res.render('profile', { loggedInData, goal1, grainsAmount1, legumesAmount1, milkAmount1, sugarAmount1, fatsAmount1, fruitsVeggiesAmount1, saltAmount1, waterAmount1 });
+    Articles.findAll({
+      attributes: [
+          'id',
+          'header',
+          'title',
+          'article_url',
+          'article_text'
+          // [sequelize.literal('SELECT * FROM articles')]
+      ]
+    })
+    .then(dbArticlesData => {
+      const articles = dbArticlesData.map(article => article.get({ plain: true }));
+    
+
+    res.render('profile', { loggedInData, goal1, grainsAmount1, legumesAmount1, milkAmount1, sugarAmount1, fatsAmount1, fruitsVeggiesAmount1, saltAmount1, waterAmount1, articles });
   })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
+  });
+
+
 });
+
+
 
 function pantryCalculator(kids, adults, time) {
   var monthdivider;

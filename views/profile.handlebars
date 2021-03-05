@@ -16,11 +16,7 @@
             </div>
             <!--ACCOUNT SETTINGS-->
             <div class="col-1 padding">
-                <select class="form-select w-78 profile-col justify-content-end" aria-label="Default select example">
-                    <option selected>Account</option>
-                    <option value="1">Update Profile</option>
-                    <option value="2">Log Out</option>
-                </select>
+                <button id="logout" type="button" class="btn btn-outline-light">Logout</button>
             </div>
         </div>
     </div>
@@ -31,8 +27,17 @@
     <div class="row">
         <div class="col-3 picture-col">
             <div class="card picture-card" style="width: 24rem;">
-                <img src="/images/Futurama-on-Syfy-700x300.jpg" />
+                {{!-- <img src="/images/Futurama-on-Syfy-700x300.jpg" /> --}}
+
+                {{#if loggedInData.avatar}}
+                <img src="{{loggedInData.avatar}}" />
+                <button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#imageUpdate">
+                    Update Image
+                </button>
+                {{> imageupdate}}
+                {{else}}
                 {{> imageupload}}
+                {{/if}}
                 <div class="card-body">
 
                     <h2>
@@ -42,18 +47,21 @@
                 </div>
             </div>
 
+
+
             <!--PANTRY GENERATOR AND CHECKLISTS-->
             <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
-                <h5 class="card-header">Pantry Items</h5>
+                <div class="card-header">
+                    <button type="button" class="btn btn-default bold" data-bs-toggle="modal" data-bs-target="#pantryModal">
+                        Pantry Generator
+                        <span class="small-italic">
+                            </br>Click here to update pantry
+                        </span>
+                    </button>
+                    {{> pantrygenerator}}
+    
+                </div>
                 <div class="card-body">
-                    <p class="card-text">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#pantryModal">
-                            Pantry Generator
-                        </button>
-                        {{> pantrygenerator}}
-                    </p>
-
                     <div class="goal">
                         Goal: <span id="timeGoal">{{goal1}}</span>
                     </div>
@@ -137,86 +145,78 @@
             <!--72 HOUR KIT-->
             <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
                 <div class="card-header text-center">
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#kitModal">
+                    <button type="button" class="btn btn-default " data-bs-toggle="modal" data-bs-target="#kitModal">
                         72 Hour Kit Checklist
+                         <span class="small-italic">
+                            </br>Click here to view checklist
+                        </span>
                     </button>
                     {{> kit}}
 
                 </div>
+                <div class="card-body text-center">
+                    <p>It's recommended to have one kit prepared for each member of your family. Each kit should
+                        meet each individual's personal needs.
+                    </p>
 
 
-            </div>
-        </div>
-        <!--PANTRY GENERATOR END-->
-
-        <!--72 HOUR KIT-->
-        <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
-            <div class="card-header text-center">
-                <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#kitModal">
-                    72 Hour Kit Checklist
-                </button>
-                {{> kit}}
-
-            </div>
-            <div class="card-body text-center">
-                <p>It's recommended to have one kit prepared for each member of your family. Each kit should
-                    meet each individual's personal needs.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!--first col end-->
-
-    <!--ARTICLES / NEWS FEED SECTION-->
-    <div class="col-6 blog-section2">
-
-        <!--TABS-->
-        <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
-            <li class="nav-item" role=" presentation">
-                <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
-                    type="button" role="tab" aria-controls="article" aria-selected="true">
-                    <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button"
-                    role="tab" aria-controls="feed" aria-selected="false">
-                    <img src="/images/feed.png" id="nav-title" class="img-fluid height: auto;">
-                </button>
-            </li>
-        </ul>
-
-        <div class="tab-content rounded" id="sectionTabContent">
-            <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
-
-                {{> articles}}
-            </div>
-        </div>
-    </div>
-
-    <!--TIPS SECTION-->
-    <div class="col-3 text-center">
-        <!--TIPS-->
-        <div class="tips-section">
-            <img src="/images/tips2.png" id="title-profile" class="img-fluid height: auto;" alt="Responsive image">
-            <!--<div class="scrollbar3">!-->
-            <div class="card mx-auto" style="width: 25rem;">
-                <div class="card-header">
-                    Featured
                 </div>
-                {{> helpfultips}}
             </div>
         </div>
+
+
+
+        <!--ARTICLES / NEWS FEED SECTION-->
+        <div class="col-6 blog-section2">
+
+            <!--TABS-->
+            <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
+                <li class="nav-item" role=" presentation">
+                    <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
+                        type="button" role="tab" aria-controls="article" aria-selected="true">
+                        <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button"
+                        role="tab" aria-controls="feed" aria-selected="false">
+                        <img src="/images/feed.png" id="nav-title" class="img-fluid height: auto;">
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content rounded" id="sectionTabContent">
+                <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
+
+                    {{> articles}}
+                </div>
+            </div>
+        </div>
+
+        <!--TIPS SECTION-->
+        <div class="col-3 text-center">
+            <!--TIPS-->
+            <div class="tips-section">
+                <img src="/images/tips2.png" id="title-profile" class="img-fluid height: auto;" alt="Responsive image">
+                <!--<div class="scrollbar3">!-->
+                <div class="card mx-auto" style="width: 25rem;">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    {{> helpfultips}}
+                </div>
+            </div>
+        </div>
+        <!--TIPS / ALERTS SECTION END-->
     </div>
-    <!--TIPS / ALERTS SECTION END-->
-</div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
-    integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
-    crossorigin="anonymous"></script>
-<script src="/javascript/image.js"></script>
-<script src="/javascript/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+    <script src="/javascript/logout.js"></script>
+    <script src="/javascript/image.js"></script>
+    <script src="/javascript/profile.js"></script>

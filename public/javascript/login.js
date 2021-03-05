@@ -40,6 +40,7 @@ async function userCreate(event) {
         // check the response status
         if (response.ok) {
           console.log('success');
+          location.reload();
         } else {
             console.log('dang')
           alert(response.statusText);
