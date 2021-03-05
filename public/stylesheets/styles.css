@@ -152,3 +152,14 @@ body {
     background-color: transparent;
 }
 
+.small-italic {
+    font-size: smaller;
+    /* font-style: italic; */
+    color:var(--green-color);
+    font-weight: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
