@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const {User} = require('../../models/user');
+const {User} = require('../../models');
 const cloudinary = require('../../utils/cloudinary');
 const upload = require('../../utils/multer');
 // const Cloudimage = require('../../models/Cloudimage');
