@@ -41,15 +41,11 @@ router.get('/profile', (req, res) => {
     const loggedinuser = JSON.stringify(userdata);
     const loggedInData = JSON.parse(loggedinuser);
 
-    // console.log('this');
-    // console.log(loggedInData);
-    // console.log('this');
-    // res.render('profile', {user: userdata} )
     var foodData = pantryCalculator(loggedInData.underseven, loggedInData.overSeven, loggedInData.weeksPrep);
     console.log(foodData);
 
     const obj = Object.assign({}, foodData);
-    // console.log(obj[0]);
+
     goal1 = obj[0];
     grainsAmount1 = obj[1];
     legumesAmount1 = obj[2];
