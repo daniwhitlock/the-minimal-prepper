@@ -1,5 +1,5 @@
 // Set up equations
-document.getElementById("pantry-save").addEventListener("click", function(){
+document.getElementById("pantry-save").addEventListener("click", function () {
 
     // grab values from drop down #pantry-save modal
     var numberofKids = document.getElementById("numberofKids").value;
@@ -9,13 +9,13 @@ document.getElementById("pantry-save").addEventListener("click", function(){
     pantryCalculator(numberofKids, numberofAdults, lengthofTime);
 });
 
-function pantryCalculator (kids, adults, time) {
+async function pantryCalculator(kids, adults, time) {
     var monthdivider;
     var goal;
     switch (time) {
         case "1":
             monthdivider = .0833;
-            goal= "1 Month";
+            goal = "1 Month";
             break;
         case "3":
             monthdivider = .25;
@@ -32,42 +32,70 @@ function pantryCalculator (kids, adults, time) {
         case "12":
             monthdivider = 1;
             goal = "1 Year";
-            break;    
+            break;
         default:
             break;
     }
     document.getElementById("timeGoal").textContent = goal;
-    console.log("monthdivider: " + monthdivider);
-   
-    var grainsAmount =(((400*monthdivider) * (kids *.7)) + ((400*monthdivider) * adults)).toFixed(1);
-    console.log(grainsAmount);
-    document.getElementById("grainsAmount").textContent = grainsAmount;
+    // console.log("monthdivider: " + monthdivider);
 
-    var legumesAmount = (((60*monthdivider) * (kids *.7)) + ((60*monthdivider) * adults)).toFixed(1);
-    console.log(legumesAmount);
-    document.getElementById("legumesAmount").textContent = legumesAmount;
+    var grainsAmount = (((400 * monthdivider) * (kids * .7)) + ((400 * monthdivider) * adults)).toFixed(1);
+    // console.log(grainsAmount);
+    // document.getElementById("grainsAmount").textContent = grainsAmount;
 
-    var milkAmount = (((16*monthdivider) * (kids *.7)) + ((16*monthdivider) * adults)).toFixed(1);
+    var legumesAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(1);
+    // console.log(legumesAmount);
+    // document.getElementById("legumesAmount").textContent = legumesAmount;
+
+    var milkAmount = (((16 * monthdivider) * (kids * .7)) + ((16 * monthdivider) * adults)).toFixed(1);
     // console.log(milkAmount);
-    document.getElementById("milkAmount").textContent = milkAmount;
+    // document.getElementById("milkAmount").textContent = milkAmount;
 
-    var sugarAmount = (((60*monthdivider) * (kids *.7)) + ((60*monthdivider) * adults)).toFixed(1);
+    var sugarAmount = (((60 * monthdivider) * (kids * .7)) + ((60 * monthdivider) * adults)).toFixed(1);
     // console.log(sugarAmount);
-    document.getElementById("sugarAmount").textContent = sugarAmount;
+    // document.getElementById("sugarAmount").textContent = sugarAmount;
 
-    var fatsAmount = (((20*monthdivider) * (kids *.7)) + ((20*monthdivider) * adults)).toFixed(1);
+    var fatsAmount = (((20 * monthdivider) * (kids * .7)) + ((20 * monthdivider) * adults)).toFixed(1);
     // console.log(fatsAmount);
-    document.getElementById("fatsAmount").textContent = fatsAmount;
+    // document.getElementById("fatsAmount").textContent = fatsAmount;
 
-    var fruitsVeggiesAmount = (((90*monthdivider) * (kids *.7)) + ((90*monthdivider) * adults)).toFixed(1);
+    var fruitsVeggiesAmount = (((90 * monthdivider) * (kids * .7)) + ((90 * monthdivider) * adults)).toFixed(1);
     // console.log(fruitsVeggiesAmount);
-    document.getElementById("fruitsVeggiesAmount").textContent = fruitsVeggiesAmount;
+    // document.getElementById("fruitsVeggiesAmount").textContent = fruitsVeggiesAmount;
 
-    var saltAmount = (((8*monthdivider) * (kids *.7)) + ((8*monthdivider) * adults)).toFixed(1);
+    var saltAmount = (((8 * monthdivider) * (kids * .7)) + ((8 * monthdivider) * adults)).toFixed(1);
     // console.log(saltAmount);
-    document.getElementById("saltAmount").textContent = saltAmount;
+    // document.getElementById("saltAmount").textContent = saltAmount;
 
-    var waterAmount = (((365*monthdivider) * (kids *.7)) + ((365*monthdivider) * adults)).toFixed(1);
+    var waterAmount = (((365 * monthdivider) * (kids * .7)) + ((365 * monthdivider) * adults)).toFixed(1);
     // console.log(waterAmount);
-    document.getElementById("waterAmount").textContent = waterAmount;
+    // document.getElementById("waterAmount").textContent = waterAmount;
+
+    // fetch.profile
+    const response = await fetch('/profile', {
+        method: 'put',
+        body: JSON.stringify({
+            kids,
+            adults,
+            time,
+            goal,
+            grainsAmount,
+            legumesAmount,
+            milkAmount,
+            sugarAmount,
+            fatsAmount,
+            fruitsVeggiesAmount,
+            saltAmount,
+            waterAmount
+        }),
+
+        headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+        // location.reload();
+        console.log("good to go");
+    } else {
+        console.log("cannot read changed data");
+    }
 }
+
