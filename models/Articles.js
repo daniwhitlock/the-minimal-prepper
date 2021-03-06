@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const { Model, DataTypes, Sequelize } = require('sequelize');
+=======
+const { Model, DataTypes, Sequel } = require('sequelize');
+>>>>>>> d611c6596fed9785cd8bfb6c2c67bf8a88d4390f
 const sequelize = require('../config/connection');
 
 class Articles extends Model {}
