@@ -1,0 +1,20 @@
+<a href="/profile"> &larr; Back to Profile</a>
+{{> articles-info articles}}
+<section>
+  <form class="comment-form">
+    <div>
+      <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+      <button type="submit">add comment</button>
+      <button type="button" class="upvote-btn">upvote</button>
+    </div>
+  </form>
+</section>
+
+
+{{> comments articles.comments}}
+
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>

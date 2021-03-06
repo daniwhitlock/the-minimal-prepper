@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const sequelize = require('../../config/connection');
-const { User } = require('../../models');
+const { User, Articles, Comment, Vote } = require('../../models');
 const cloudinary = require('../../utils/cloudinary');
 const upload = require('../../utils/multer');
 // const Cloudimage = require('../../models/Cloudimage');
@@ -105,4 +105,5 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
 module.exports = router;
