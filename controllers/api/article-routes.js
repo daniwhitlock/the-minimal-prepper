@@ -22,10 +22,35 @@ router.get('/', (req, res) => {
             model: User,
             attributes: ['username']
           }
-        },
+        }
+      ]
+  })
+    .then(dbArticlesData => res.json(dbArticlesData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+  Articles.findOne({
+      attributes: [
+          'id',
+          'header',
+          'title',
+          'article_url',
+          'article_text',
+          'created_at'
+          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.articles_id)'), 'vote_count']
+      ],
+      include: [
         {
-          model: User,
-          attributes: ['username']
+          model: Comment,
+          attributes: ['id', 'comment_text', 'articles_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
         }
       ]
   })
