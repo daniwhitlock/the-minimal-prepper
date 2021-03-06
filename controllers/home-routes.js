@@ -92,6 +92,9 @@ router.get('/profile', (req, res) => {
 
 router.get('/articles/:id', (req, res) => {
   Articles.findOne({
+    where: {
+      id: req.params.id
+    },
     attributes: [
       'id',
       'header',
