@@ -1,14 +1,37 @@
+
+
+
+const userErrorFunction = function() {
+  console.log('yay')
+  const invalidUsername = document.querySelector('#username-signup');
+  invalidUsername.value = 'Username already in use';
+  invalidUsername.style.color = "red";
+  
+  const errorForm = document.querySelector('.user-form')
+  errorForm.addEventListener('click', resetBox);
+  
+}
+
+
+
 const resetBox = function() {
   document.querySelector('.user-form').removeEventListener('click', resetBox);
+
   const invalidEmail = document.querySelector('#email-data');
   const invalidPassword = document.querySelector('#password-data');
-  console.log(invalidPassword)
+  const invalidUsername = document.querySelector('#username-signup');
+
+  invalidUsername.value = '';
+  invalidUsername.style.color = "black";
+
   invalidEmail.value = '';
   invalidEmail.style.color = "black";
+
   invalidPassword.value = ''
   invalidPassword.style.color = "black";
   invalidPassword.type = 'password'
 
+  console.log()
 }
 
 const errorFunction = function() {
@@ -31,13 +54,26 @@ const errorFunction = function() {
 // const errorFunction = function(){
 //     console.log('yay')
 // }
+const ccEmailsAreValid = function(emails) {
+  if (!emails.length) return true;
+  const regexp = RegExp(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i);
+
+  console.log(regexp)
+  return regexp.test(emails)
+  // return emails.every(email => regexp.test(email));
+}
 
 async function userCreate(event) {
   event.preventDefault();
 
+  // var schema = new passwordValidator();
+
+  // schema.is().min(5)
+
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-data').value.trim();
   const password = document.querySelector('#password-data').value.trim();
+  // console.log(schema.validate('#password-data'))
   const underseven = document.querySelector('#underSeven-data').value.trim();
   const overSeven = document.querySelector('#overSeven-data').value.trim();
   const weeksPrep = document.querySelector('#weeksPrep-data').value.trim();
@@ -49,7 +85,27 @@ async function userCreate(event) {
   console.log(underseven);
   console.log(overSeven);
   console.log(weeksPrep);
+
+  // const regexp = RegExp(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i);
+  // if (email === regexp) {
+  //   console.log(what)
+  // }
+
+  
+
+  const emailCheck = ccEmailsAreValid(email);
+
+  if (!emailCheck) {
+
+    return errorFunction();
+  }
+
+  if (password.length < 4){
+
+    return errorFunction();
+  }
   // console.log(diet);
+  
   if (username) {
 
     console.log(username);
@@ -72,8 +128,9 @@ async function userCreate(event) {
       location.reload();
     } else {
      console.log(response)
+     console.log()
     //  alert(response.statusText);
-      errorFunction();
+     userErrorFunction();
     }
   }
 

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const sequelize = require('../../config/connection');
 const { User } = require('../../models');
 const cloudinary = require('../../utils/cloudinary');
@@ -18,7 +19,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-
+ console.log(req)
 
   User.create({
 
@@ -36,6 +37,9 @@ router.post('/', (req, res) => {
     })
     .catch(err => {
       console.log(err);
+      console.log(req)
+      console.log(res)
+      console.log(User)
       res.status(500).json(err);
     });
 });
