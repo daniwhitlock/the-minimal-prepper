@@ -6,9 +6,7 @@
                 <h5 class="card-title">{{ article.title }}</h5>
                 <p class="card-text">{{ article.article_text }}.</p>
             </div>
-            {{!-- {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}} --}}
-            |
-            <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            {{> comments articles.comments}}
         </div>
         <form class="comment-form">
             <div>
@@ -20,8 +18,6 @@
                 <button type="button" class="upvote-btn">upvote</button>
             </div>
         </form>
-
-        {{> comments articles.comments}}
     {{/each}}
 {{/if}}
 

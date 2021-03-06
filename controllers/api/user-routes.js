@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const sequelize = require('../../config/connection');
-const { User } = require('../../models');
+const { User, Articles, Comment, Vote } = require('../../models');
 const cloudinary = require('../../utils/cloudinary');
 const upload = require('../../utils/multer');
 // const Cloudimage = require('../../models/Cloudimage');
@@ -106,4 +106,41 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// router.get('/:id', (req, res) => {
+//   User.findOne({
+//     attributes: { exclude: ['password'] },
+//     where: {
+//       id: req.params.id
+//     },
+//     include: [
+//       {
+//         model: Comment,
+//         attributes: ['id', 'comment_text', 'created_at'],
+//         include: {
+//           model: Post,
+//           attributes: ['title']
+//         }
+//       },
+//       {
+//         model: Articles,
+//         attributes: ['title'],
+//         through: Vote,
+//         as: 'voted_posts'
+//       }
+//     ]
+//   })
+//     .then(dbUserData => {
+//       if (!dbUserData) {
+//         res.status(404).json({ message: 'No user found with this id' });
+//         return;
+//       }
+//       res.json(dbUserData);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
 module.exports = router;
