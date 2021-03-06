@@ -1,34 +1,14 @@
 async function uploadImage(event) {
-    event.preventDefault();
-    const imageData = document.getElementById("image-save")
-    const imageInfo = document.getElementById("imageInfo")
-   
-    console.log(new FormData(imageData))
-    
-    let response = await fetch('/api/users/images', {
-        method: 'PUT',
-        body: new FormData(imageData)
-      });
+  event.preventDefault();
+  const imageData = document.getElementById("image-save")
 
-      location.reload();
-      console.log(response)
+  let response = await fetch('/api/users/images', {
+    method: 'PUT',
+    body: new FormData(imageData)
+  });
 
-    // const response = await fetch('api/users/images', {
-    //     method: 'PUT',
-    //     body: JSON.stringify({
-    //       post_id: id
-    //     }),
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     }
-    //   });
-      
-    //   if (response.ok) {
-    //     document.location.reload();
-    //   } else {
-    //     alert(response.statusText);
-    //   }
-  }
+  location.reload();
+}
 
- 
-  document.getElementById("image-save").addEventListener("submit", uploadImage);
+
+document.getElementById("image-save").addEventListener("submit", uploadImage);
