@@ -10,7 +10,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Articles, {
-    foreignKey: 'post_id',
+    foreignKey: 'articles_id',
     onDelete: 'SET NULL'
 });
 
@@ -20,7 +20,7 @@ User.hasMany(Comment, {
 });
 
 Articles.hasMany(Comment, {
-    foreignKey: 'post_id'
+    foreignKey: 'articles_id'
 });
 
 
