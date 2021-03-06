@@ -1,24 +1,15 @@
 {{#if articles.length}}
     {{#each articles as |article|}}
         <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
-            <div class="card-header">{{ article.header }}</div>
+            <div class="card-header">{{ article.header }} {{vote_count}} {{format_plural "point" vote_count}} on {{format_date created_at}}</div>
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
                 <p class="card-text">{{ article.article_text }}.</p>
             </div>
-            {{> comments articles.comments}}
         </div>
-        <form class="comment-form">
-            <div>
-                <textarea name="comment-body"></textarea>
-            </div>
-
-            <div>
-                <button type="submit">add comment</button>
-                <button type="button" class="upvote-btn">upvote</button>
-            </div>
-        </form>
+        {{> comments articles.comments}}
     {{/each}}
 {{/if}}
 
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/upvote.js"></script>
