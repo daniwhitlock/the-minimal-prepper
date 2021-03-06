@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User } = require('../models');
-const Articles = require('../models/Articles');
+const { User, Articles, Comment } = require('../models');
 
 router.get('/', (req, res) => {
   console.log(req.session);
@@ -13,7 +12,6 @@ router.get('/', (req, res) => {
             'title',
             'article_url',
             'article_text'
-            // [sequelize.literal('SELECT * FROM articles')]
         ]
     })
       .then(dbArticlesData => {
@@ -58,12 +56,23 @@ router.get('/profile', (req, res) => {
 
     Articles.findAll({
       attributes: [
-          'id',
-          'header',
-          'title',
-          'article_url',
-          'article_text'
-          // [sequelize.literal('SELECT * FROM articles')]
+        'id',
+        'header',
+        'title',
+        'article_url',
+        'article_text',
+        'created_at',
+        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.articles_id)'), 'vote_count']
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: ['id', 'comment_text', 'articles_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
+        }
       ]
     })
     .then(dbArticlesData => {
@@ -79,6 +88,42 @@ router.get('/profile', (req, res) => {
   });
 
 
+});
+
+router.get('/articles/:id', (req, res) => {
+  Articles.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'header',
+      'title',
+      'article_url',
+      'article_text',
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE articles.id = vote.articles_id)'), 'vote_count']
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'articles_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      }
+    ]
+  })
+  .then(dbArticlesData => {
+    const articles = dbArticlesData.get({ plain: true });
+
+  res.render('single-article', { articles });
+})
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 
