@@ -90,7 +90,6 @@ router.put('/images', upload.single('imageUser'), async (req, res) => {
     }).then(answer => {
       res.json(answer)
     })
-
   } catch (err) {
     console.log(err)
   }

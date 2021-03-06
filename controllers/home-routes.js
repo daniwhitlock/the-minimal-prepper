@@ -45,7 +45,6 @@ router.get('/profile', (req, res) => {
     console.log(foodData);
 
     const obj = Object.assign({}, foodData);
-
     goal1 = obj[0];
     grainsAmount1 = obj[1];
     legumesAmount1 = obj[2];
