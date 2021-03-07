@@ -1,25 +1,23 @@
 <header>
     <div class="container-fluid profileBar2">
+
         <!--NAVIGATION-->
-        <div class="row">
-            <!--LOGO-->
-            <div class="col-9">
+        <nav>
+            <div>
                 <img class="logo" id="logo3" src="/images/small-logo2.png" alt="Responsive image">
+                <button id="logout" type="button" class="btn btn-outline-light right">Logout</button>
             </div>
-            <!--SEARCH BAR-->
-            <div class="col-2 padding">
-                <div class="input-group w-100 profile-col">
-                    <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
-                </div>
-            </div>
-            <!--ACCOUNT SETTINGS-->
-            <div class="col-1 padding">
-                <button id="logout" type="button" class="btn btn-outline-light">Logout</button>
-            </div>
-        </div>
+        </nav>
     </div>
+    {{!--<!--SEARCH BAR-->
+    <div class="col-2 padding">
+        <div class="input-group w-100 profile-col">
+            <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
+                aria-describedby="search-addon" />
+            <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
+        </div>
+    </div> --}}
+
 </header>
 
 <div class="container-fluid main-section text-center">
@@ -52,16 +50,17 @@
             <!--PANTRY GENERATOR AND CHECKLISTS-->
             <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
                 <div class="card-header">
-                    <button type="button" class="btn btn-default bold" data-bs-toggle="modal" data-bs-target="#pantryModal">
+                    <button type="button" class="btn btn-default bold" data-bs-toggle="modal"
+                        data-bs-target="#pantryModal">
                         Pantry Generator
                         <span class="small-italic">
-                            </br>Click here to update pantry
+                            </br>Click here to update pantry information
                         </span>
                     </button>
                     {{> pantrygenerator}}
-    
+
                 </div>
-                <div class="card-body">
+                <div class="card-body checkboxListener">
                     <div class="goal">
                         Goal: <span id="timeGoal">{{goal1}}</span>
                     </div>
@@ -78,7 +77,7 @@
                             <td id="grainsAmount">{{grainsAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkGrains"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkGrains">
+                                <input type="checkbox" class="custom-control-input" id="checkGrains" {{#if pg_one}} checked {{/if}} >
                             </td>
                         </tr>
                         <tr>
@@ -86,7 +85,7 @@
                             <td id="legumesAmount">{{legumesAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkLegumes"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkLegumes">
+                                <input type="checkbox" class="custom-control-input" id="checkLegumes" {{#if pg_two}} checked {{/if}} >
                             </td>
                         </tr>
                         <tr>
@@ -94,7 +93,7 @@
                             <td id="milkAmount">{{milkAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkMilk"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkMilk">
+                                <input type="checkbox" class="custom-control-input" id="checkMilk" {{#if pg_three}} checked {{/if}}>
                             </td>
                         </tr>
                         <tr>
@@ -102,7 +101,7 @@
                             <td id="sugarAmount">{{sugarAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkSugar"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkSugar">
+                                <input type="checkbox" class="custom-control-input" id="checkSugar" {{#if pg_four}} checked {{/if}}>
                             </td>
                         </tr>
                         <tr>
@@ -110,7 +109,7 @@
                             <td id="fatsAmount">{{fatsAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkFats"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkFats">
+                                <input type="checkbox" class="custom-control-input" id="checkFats" {{#if pg_five}} checked {{/if}}>
                             </td>
                         </tr>
                         <tr>
@@ -118,7 +117,7 @@
                             <td id="fruitsVeggiesAmount">{{fruitsVeggiesAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkFruitsVeggies"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies">
+                                <input type="checkbox" class="custom-control-input" id="checkFruitsVeggies" {{#if pg_six}} checked {{/if}}>
                             </td>
                         </tr>
                         <tr>
@@ -126,7 +125,7 @@
                             <td id="saltAmount">{{saltAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkSalt"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkSalt">
+                                <input type="checkbox" class="custom-control-input" id="checkSalt" {{#if pg_seven}} checked {{/if}}>
                             </td>
                         </tr>
                         <tr>
@@ -134,7 +133,7 @@
                             <td id="waterAmount">{{waterAmount1}}</td>
                             <td>
                                 <label class="custom-control-label" for="checkWater"></label>
-                                <input type="checkbox" class="custom-control-input" id="checkWater">
+                                <input type="checkbox" class="custom-control-input" id="checkWater" {{#if pg_eight}} checked {{/if}}>
                             </td>
                         </tr>
                     </table>
@@ -147,7 +146,7 @@
                 <div class="card-header text-center">
                     <button type="button" class="btn btn-default " data-bs-toggle="modal" data-bs-target="#kitModal">
                         72 Hour Kit Checklist
-                         <span class="small-italic">
+                        <span class="small-italic">
                             </br>Click here to view checklist
                         </span>
                     </button>

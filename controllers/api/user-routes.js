@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
- console.log(req)
+  console.log(req)
 
   User.create({
 
@@ -103,6 +103,50 @@ router.post('/logout', (req, res) => {
   }
   else {
     res.status(404).end();
+  }
+});
+
+router.put('/pantry', async (req, res) => {
+  console.log(req.body);
+  try {
+    User.update({
+      underseven: req.body.underseven,
+      overSeven: req.body.overSeven,
+      weeksPrep: req.body.weeksPrep
+    }, {
+      where: {
+        id: req.session.user_id
+      }
+    }).then(answer => {
+      res.json(answer)
+    })
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.put('/checkbox', async (req, res) => {
+  console.log('below')
+  console.log(req.body.pg_three);
+  try {
+    User.update({
+      pg_one: req.body.pg_one,
+      pg_two: req.body.pg_two,
+      pg_three: req.body.pg_three,
+      pg_four: req.body.pg_four,
+      pg_five: req.body.pg_five,
+      pg_six: req.body.pg_six,
+      pg_seven: req.body.pg_seven,
+      pg_eight: req.body.pg_eight,
+    }, {
+      where: {
+        id: req.session.user_id
+      }
+    }).then(answer => {
+      res.json(answer)
+    })
+  } catch (err) {
+    console.log(err);
   }
 });
 

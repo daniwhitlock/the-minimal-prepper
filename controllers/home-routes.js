@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Articles, Comment } = require('../models');
 
 router.get('/', (req, res) => {
-  console.log(req.session);
+  // console.log(req.session);
 
     Articles.findAll({
         attributes: [
@@ -25,8 +25,6 @@ router.get('/', (req, res) => {
       });
 });
 
-// router.get('/login');
-
 router.get('/profile', (req, res) => {
   // console.log("--------------------------");
   // console.log(req.session.username);
@@ -38,9 +36,20 @@ router.get('/profile', (req, res) => {
   }).then(userdata => {
     const loggedinuser = JSON.stringify(userdata);
     const loggedInData = JSON.parse(loggedinuser);
-
+    console.log(loggedInData.pg_one)
     var foodData = pantryCalculator(loggedInData.underseven, loggedInData.overSeven, loggedInData.weeksPrep);
-    console.log(foodData);
+    // console.log(foodData);
+   
+    var pg_one = loggedInData.pg_one;
+    var pg_two = loggedInData.pg_two;
+    var pg_three = loggedInData.pg_three;
+    var pg_four = loggedInData.pg_four;
+    var pg_five = loggedInData.pg_five;
+    var pg_six = loggedInData.pg_six;
+    var pg_seven = loggedInData.pg_seven;
+    var pg_eight = loggedInData.pg_eight ;
+
+
 
     const obj = Object.assign({}, foodData);
     goal1 = obj[0];
@@ -78,16 +87,15 @@ router.get('/profile', (req, res) => {
       const articles = dbArticlesData.map(article => article.get({ plain: true }));
     
 
-    res.render('profile', { loggedInData, goal1, grainsAmount1, legumesAmount1, milkAmount1, sugarAmount1, fatsAmount1, fruitsVeggiesAmount1, saltAmount1, waterAmount1, articles });
+    res.render('profile', { loggedInData, goal1, grainsAmount1, legumesAmount1, milkAmount1, sugarAmount1, fatsAmount1, fruitsVeggiesAmount1, saltAmount1, waterAmount1, articles, pg_one, pg_two, pg_three, pg_four, pg_five, pg_six, pg_seven, pg_eight });
   })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
   });
-
-
 });
+
 
 router.get('/articles/:id', (req, res) => {
   Articles.findOne({
@@ -124,8 +132,6 @@ router.get('/articles/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
-
-
 
 function pantryCalculator(kids, adults, time) {
   var monthdivider;
