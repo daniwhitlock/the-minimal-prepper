@@ -1,0 +1,13 @@
+<article class="post article-centered">
+  <div class="title">
+    <a href="{{article_url}}" target="_blank">{{title}}</a>
+    <br>
+    <span>({{format_url article_url}})</span>
+  </div>
+
+  <div class="meta">
+    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/articles/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>

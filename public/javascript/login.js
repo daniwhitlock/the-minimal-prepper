@@ -74,7 +74,7 @@ async function userCreate(event) {
     return errorFunction();
   }
   
-  if (username) {
+  // if (username) {
 
     console.log(username);
     const response = await fetch('/api/users', {
@@ -95,7 +95,7 @@ async function userCreate(event) {
     } else {
      userErrorFunction();
     }
-  }
+  // }
 
 }
 // console.log(document.querySelector('.user-form'));

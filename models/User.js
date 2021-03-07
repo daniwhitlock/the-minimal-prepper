@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { data } = require('jquery');
 
 class User extends Model {
     // set up method to run on instance data (per user) to check password
@@ -10,7 +11,6 @@ class User extends Model {
 }
 
 User.init(
-
     {
         id: {
             type: DataTypes.INTEGER,
@@ -18,9 +18,11 @@ User.init(
             primaryKey: true,
             autoIncrement: true
         },
+        // needs to be unique
         username: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         email: {
             type: DataTypes.STRING,
@@ -64,10 +66,82 @@ User.init(
             allowNull: true,
            
         },
-        // diet: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
+        pg_one: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+            allowNull: true,
+        },
+        pg_two: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_three: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_four: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_five: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_six: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_seven: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        pg_eight: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: true,
+        },
+        // kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
         // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // }
+        // kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },        kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        
 
     },
     {
