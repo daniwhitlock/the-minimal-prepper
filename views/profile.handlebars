@@ -147,7 +147,7 @@
 
             <!--72 HOUR KIT-->
             <div class="card text-dark bg-light mb-3" style="max-width: 40rem;">
-                <div class="card-header text-center" >
+                <div class="card-header text-center">
                     <button type="button" class="btn btn-default " data-bs-toggle="modal" data-bs-target="#kitModal">
                         72 Hour Kit Checklist
                         <span class="small-italic">
@@ -171,22 +171,25 @@
         <!--ARTICLES / NEWS FEED SECTION-->
         <div class="col-md-12 col-lg-6 blog-section2 text-center">
 
-            <!--TABS-->
-            <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
+            <div>
+                <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
+                <div class="tab-content rounded" id="sectionTabContent">
+                    <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
+
+                        {{> articles}}
+                    </div>
+                </div>
+            </div>
+            {{!-- <ul class="nav nav-tabs" id=" sectionTab" role="tablist">
                 <li class="nav-item" role=" presentation">
                     <button class="nav-link active" id="article-tab" data-bs-toggle="tab" data-bs-target="#article"
                         type="button" role="tab" aria-controls="article" aria-selected="true">
                         <img src="/images/helpfularticle.png" id="nav-title" class="img-fluid height: auto;">
                     </button>
                 </li>
-            </ul>
+            </ul> --}}
 
-            <div class="tab-content rounded" id="sectionTabContent">
-                <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
 
-                    {{> articles}}
-                </div>
-            </div>
         </div>
 
         <!--TIPS SECTION-->
