@@ -87,10 +87,6 @@ body {
     background-color: var(--green-color);
 }
 
-.tips-section {
-    margin-top: 100px;
-    
-}
 
 #logo3 {
     height: 100px;
@@ -220,4 +216,8 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100;
+}
+
+.image-name-box {
+    display: center;
 }

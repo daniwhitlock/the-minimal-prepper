@@ -1,6 +1,6 @@
 {{#if articles.length}}
     {{#each articles as |article|}}
-        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 58rem;">
+        <div class=" text-center card-padding card text-dark bg-light mb-3 mx-auto" style="max-width: 50rem;">
             <div class="card-header">{{ article.header }} {{vote_count}} {{format_plural "point" vote_count}} on {{format_date created_at}}</div>
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
