@@ -65,6 +65,10 @@ User.init(
             allowNull: true,
            
         },
+        kit_water_id: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+        }
         // diet: {
         //     type: DataTypes.STRING,
         //     allowNull: false,
