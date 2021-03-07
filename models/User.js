@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const { data } = require('jquery');
 
 class User extends Model {
     // set up method to run on instance data (per user) to check password
@@ -65,14 +66,47 @@ User.init(
             allowNull: true,
            
         },
-        kit_water_id: {
+        pg_one: {
             type: DataTypes.BOOLEAN,
+            defaultValue: false,
             allowNull: true,
-        }
-        // diet: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
+        },
+        // kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
         // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // }
+        // kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },        kit_one: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_two: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        // kit_three: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: true,
+        // },
+        
 
     },
     {
