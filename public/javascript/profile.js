@@ -25,6 +25,40 @@ document.getElementById("pantry-save").addEventListener("click", async function 
 
 });
 
+document.querySelector('.checkboxListener').addEventListener("click", async function () {
+
+    console.log("clicked---------------")
+    var pgone = document.getElementById("checkGrains").checked;
+    var pgtwo = document.getElementById("checkLegumes").checked;
+    var pgthree = document.getElementById("checkMilk").checked;
+    var pgfour = document.getElementById("checkSugar").checked;
+    var pgfive = document.getElementById("checkFats").checked;
+    var pgsix = document.getElementById("checkFruitsVeggies").checked;
+    var pgseven = document.getElementById("checkSalt").checked;
+    var pgeight = document.getElementById("checkWater").checked;
+    console.log(pgone)
+    let response = await fetch('api/users/checkbox', {
+        method: 'PUT',
+        body: JSON.stringify({
+            pg_one: pgone,
+            pg_two: pgtwo,
+            pg_three: pgthree,
+            pg_four: pgfour,
+            pg_five: pgfive,
+            pg_six: pgsix,
+            pg_seven: pgseven,
+            pg_eight: pgeight,
+        }),
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    if (response.ok) {
+        // document.location.reload();
+        console.log("good to go");
+    } else {
+        console.log("cannot read changed data");
+    }
+});
 
 
 
