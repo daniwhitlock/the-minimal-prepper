@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { User, Pantry} = require('../models');
+const { User } = require('../models');
 const Articles = require('../models/Articles');
 
 router.get('/', (req, res) => {
@@ -78,46 +78,6 @@ router.get('/profile', (req, res) => {
     });
   });
 });
-
-router.put('/profile', (req, res) => {
-  //connecting from the user page to here
-  console.log("reqbody -------");
-  console.log(req.body);
-  console.log("-------");
-  Pantry.update(req.body, {        
-  })
-  .then(dbPantryData => {
-    if(!dbPantryData) {
-      res.status(404).json({ message: 'Please select new data and save' });
-      return;
-    }
-    console.log(dbPantryData);
-    // console.log("kids");
-    // console.log(dbPantryData.kids);
-    // var foodData = pantryCalculator(loggedInData.underseven, loggedInData.overSeven, loggedInData.weeksPrep);
-    // console.log(foodData);
-
-    // const obj = Object.assign({}, foodData);
-
-    // goal1 = obj[0];
-    // grainsAmount1 = obj[1];
-    // legumesAmount1 = obj[2];
-    // milkAmount1 = obj[3];
-    // sugarAmount1 = obj[4];
-    // fatsAmount1 = obj[5];
-    // fruitsVeggiesAmount1 = obj[6];
-    // saltAmount1 = obj[7];
-    // waterAmount1 = obj[8];
-    res.render('profile', {goal1, grainsAmount1, legumesAmount1, milkAmount1, sugarAmount1, fatsAmount1, fruitsVeggiesAmount1, saltAmount1, waterAmount1});
-    // res.json(dbPantryData);
-    // console.log(dbPantryData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
-
 
 function pantryCalculator(kids, adults, time) {
   var monthdivider;
