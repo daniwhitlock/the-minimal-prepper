@@ -1,24 +1,17 @@
 <header>
     <div class="container-fluid profileBar">
-        <!--NAVIGATION-->
-        <div class="row">
-            <div class="col-xs-12 col-md-11 col-sm-10">
-                <img class="logo" id="logo2" src="/images/logo2 copy.png" class="img-fluid height: auto;"
-                    alt="Responsive image">
+        <nav>
+            <div>
+                <img class="logo" id="logo2" src="/images/logo2 copy.png" alt="Responsive image">
+                <a>
+                    <button type="button" class="btn btn-outline-light right" data-bs-toggle="modal"
+                        data-bs-target="#logInModal">
+                        Log In
+                    </button>
+                    {{> login}}
+                </a>
             </div>
-
-            <div class=" col-xs-12 col-md-1 col-sm-2">
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal"
-                            data-bs-target="#logInModal">
-                            Log In
-                        </button>
-                        {{> login}}
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </nav>
     </div>
 </header>
 
@@ -26,11 +19,11 @@
 <div class="container-fluid hero-section">
     <div class="row">
         <div class="col-xs-12  col-md-12 text-center">
-            <img class="logo" id="main-logo" src="/images/logo1 copy.png" class="img-fluid height: auto;">
+            <img class="logo img-fluid height:auto;" id="main-logo" src="/images/logo1 copy.png" alt="...">
         </div>
 
         <div class="extended col-md-12 text-center">
-            <div class="p-3  signup-card mb-2  bg-transparent text-dark card w-50 border border-2 rounded-start">
+            <div class="signup-card mb-2  bg-transparent text-dark card w-50 border border-2 rounded-start">
                 <div class="card-body">
                     <h5 class="card-title white">CREATE AN ACCOUNT AND START PREPPING TODAY!</h5>
                     <p class="card-text white">Minimal Prepper makes it easy and stress-free to prepare for any
