@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Articles, Comment } = require('../models');
 
 router.get('/', (req, res) => {
-  console.log(req.session);
+  // console.log(req.session);
 
     Articles.findAll({
         attributes: [
@@ -25,8 +25,6 @@ router.get('/', (req, res) => {
       });
 });
 
-// router.get('/login');
-
 router.get('/profile', (req, res) => {
   // console.log("--------------------------");
   // console.log(req.session.username);
@@ -40,7 +38,7 @@ router.get('/profile', (req, res) => {
     const loggedInData = JSON.parse(loggedinuser);
 
     var foodData = pantryCalculator(loggedInData.underseven, loggedInData.overSeven, loggedInData.weeksPrep);
-    console.log(foodData);
+    // console.log(foodData);
 
     const obj = Object.assign({}, foodData);
     goal1 = obj[0];
@@ -85,9 +83,8 @@ router.get('/profile', (req, res) => {
       res.status(500).json(err);
     });
   });
-
-
 });
+
 
 router.get('/articles/:id', (req, res) => {
   Articles.findOne({
@@ -124,8 +121,6 @@ router.get('/articles/:id', (req, res) => {
     res.status(500).json(err);
   });
 });
-
-
 
 function pantryCalculator(kids, adults, time) {
   var monthdivider;

@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Titillium Web', sans-serif;
+    background-color: var(--blue-color);
 }
 
 :root {
@@ -13,6 +14,7 @@ body {
 .profileBar {
     background-color: var(--blue-color);
 }
+
 
 .profileBar2 {
     background-image: linear-gradient( #8bb69b 20%, #2C518F);
@@ -163,3 +165,59 @@ body {
     font-weight: bold;
 }
 
+.right {
+  float: right;
+  margin: 5px;
+}
+
+.title {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.title a {
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.article-centered {
+    margin-left: 30px;
+    /* display: flex;
+    display: inline-block;
+    justify-content: center; */
+    
+}
+.meta {
+    color: white;
+}
+
+.meta a {
+    text-decoration: none;
+    color: var(--second-green);
+    font-weight: bold;
+}
+
+.comment-form {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.comment {
+    margin-left: 30px;
+    color: white;
+}
+
+.comment-title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+.comment-textarea {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100;
+}

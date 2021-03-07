@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
- console.log(req)
+  console.log(req)
 
   User.create({
 
@@ -103,6 +103,25 @@ router.post('/logout', (req, res) => {
   }
   else {
     res.status(404).end();
+  }
+});
+
+router.put('/pantry', async (req, res) => {
+  console.log(req.body);
+  try {
+    User.update({
+      underseven: req.body.underseven,
+      overSeven: req.body.overSeven,
+      weeksPrep: req.body.weeksPrep
+    }, {
+      where: {
+        id: req.session.user_id
+      }
+    }).then(answer => {
+      res.json(answer)
+    })
+  } catch (err) {
+    console.log(err);
   }
 });
 
