@@ -1,25 +1,35 @@
 <header>
     <div class="container-fluid profileBar2">
+
         <!--NAVIGATION-->
-        <div class="row">
-            <!--LOGO-->
-            <div class="col-9">
+        <nav>
+            <div>
                 <img class="logo" id="logo3" src="/images/small-logo2.png" alt="Responsive image">
+                <button id="logout" type="button" class="btn btn-outline-light right">Logout</button>
             </div>
-            <!--SEARCH BAR-->
-            <div class="col-2 padding">
-                <div class="input-group w-100 profile-col">
-                    <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
-                        aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
-                </div>
+        </nav>
+    </div>
+    {{!--
+    <!--NAVIGATION-->
+    <div class="row">
+        <!--LOGO-->
+        <div class="col-9">
+            <img class="logo" id="logo3" src="/images/small-logo2.png" alt="Responsive image">
+        </div>
+        <!--SEARCH BAR-->
+        {{!-- <div class="col-2 padding">
+            <div class="input-group w-100 profile-col">
+                <input type="search " class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-light"><i class="fa fa-search"></i></button>
             </div>
-            <!--ACCOUNT SETTINGS-->
-            <div class="col-1 padding">
-                <button id="logout" type="button" class="btn btn-outline-light">Logout</button>
-            </div>
+        </div> --}}
+        <!--ACCOUNT SETTINGS-->
+        <div class="col-1 padding">
+
         </div>
     </div>
+    </div> --}}
 </header>
 
 <div class="container-fluid main-section text-center">
@@ -52,14 +62,15 @@
             <!--PANTRY GENERATOR AND CHECKLISTS-->
             <div class="card  text-dark bg-light mb-3" style="max-width: 24rem;">
                 <div class="card-header">
-                    <button type="button" class="btn btn-default bold" data-bs-toggle="modal" data-bs-target="#pantryModal">
+                    <button type="button" class="btn btn-default bold" data-bs-toggle="modal"
+                        data-bs-target="#pantryModal">
                         Pantry Generator
                         <span class="small-italic">
                             </br>Click here to update pantry
                         </span>
                     </button>
                     {{> pantrygenerator}}
-    
+
                 </div>
                 <div class="card-body">
                     <div class="goal">
@@ -147,7 +158,7 @@
                 <div class="card-header text-center">
                     <button type="button" class="btn btn-default " data-bs-toggle="modal" data-bs-target="#kitModal">
                         72 Hour Kit Checklist
-                         <span class="small-italic">
+                        <span class="small-italic">
                             </br>Click here to view checklist
                         </span>
                     </button>
@@ -220,4 +231,3 @@
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/image.js"></script>
     <script src="/javascript/profile.js"></script>
-    
