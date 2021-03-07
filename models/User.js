@@ -68,7 +68,7 @@ User.init(
         },
         pg_one: {
             type: DataTypes.BOOLEAN,
-            defaultValue: true,
+            defaultValue: false,
             allowNull: true,
         },
         pg_two: {
