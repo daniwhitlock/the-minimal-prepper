@@ -90,7 +90,6 @@ router.put('/images', upload.single('imageUser'), async (req, res) => {
     }).then(answer => {
       res.json(answer)
     })
-
   } catch (err) {
     console.log(err)
   }
@@ -114,6 +113,31 @@ router.put('/pantry', async (req, res) => {
       underseven: req.body.underseven,
       overSeven: req.body.overSeven,
       weeksPrep: req.body.weeksPrep
+    }, {
+      where: {
+        id: req.session.user_id
+      }
+    }).then(answer => {
+      res.json(answer)
+    })
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.put('/checkbox', async (req, res) => {
+  console.log('below')
+  console.log(req.body.pg_three);
+  try {
+    User.update({
+      pg_one: req.body.pg_one,
+      pg_two: req.body.pg_two,
+      pg_three: req.body.pg_three,
+      pg_four: req.body.pg_four,
+      pg_five: req.body.pg_five,
+      pg_six: req.body.pg_six,
+      pg_seven: req.body.pg_seven,
+      pg_eight: req.body.pg_eight,
     }, {
       where: {
         id: req.session.user_id

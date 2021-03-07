@@ -22,7 +22,7 @@ User.init(
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            unique: true
         },
         email: {
             type: DataTypes.STRING,
@@ -68,7 +68,7 @@ User.init(
         },
         pg_one: {
             type: DataTypes.BOOLEAN,
-            defaultValue: false,
+            defaultValue: true,
             allowNull: true,
         },
         pg_two: {
