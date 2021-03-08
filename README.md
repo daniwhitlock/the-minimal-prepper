@@ -22,5 +22,9 @@ User Profile:
 ![image](https://user-images.githubusercontent.com/72768805/110228328-81691b80-7ebd-11eb-843b-747ddf2fc06d.png)
 ![image](https://user-images.githubusercontent.com/72768805/110228392-f0df0b00-7ebd-11eb-8860-f58e85cbd901.png)
 
+Articles Comments: 
+
+![image](https://user-images.githubusercontent.com/72768805/110271905-28b18580-7f86-11eb-9685-8c96b94a024a.png)
+
 <!-- [Click to view walk through video]( ) -->
 
